@@ -1,0 +1,183 @@
+.main {
+    width: 100%;
+    overflow-x: hidden;
+    padding: 20px clamp(1rem, 5vw, 60px);
+    /* Responsive horizontal padding */
+    background-color: #272C35;
+    color: #A9AFB5;
+    box-sizing: border-box;
+    max-width: 1280px;
+    margin: auto;
+}
+
+/* BOX 1 */
+.box1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.langBox {
+    background-color: rgb(42, 42, 42);
+    color: white;
+    padding: 12px 16px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+
+/* HR line */
+.hrLine {
+    margin: 20px 0;
+    border-top: 1px solid #394046;
+}
+
+/* Grid Sections */
+.gridBox {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.gridBox2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.list {
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+li {
+    cursor: pointer;
+    width: fit-content;
+    font-size: 0.9rem;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* More Links + Icons */
+.moreLinks {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-block: 20px;
+}
+
+.moreLinksInner {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+    justify-content: center;
+}
+
+.moreLinksInner a {
+    text-decoration: none;
+    color: #A9AFB5;
+    font-size: 0.85rem;
+}
+
+.socialMediaIconsBox {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.socialMediaIcons {
+    width: 1.2rem;
+    cursor: pointer;
+}
+
+/* Last Line */
+.lastWords {
+    font-size: 0.7rem;
+    text-align: center;
+    margin-top: 1rem;
+    line-height: 1.5;
+    padding: 0 10px;
+}
+
+/* Responsive */
+@media all and (max-width: 1024px) {
+    .main {
+        padding: 20px 60px;
+    }
+}
+
+@media all and (max-width: 768px) {
+    .main {
+        padding: 20px 40px;
+    }
+
+    .gridBox {
+        grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    }
+
+    .gridBox2 {
+        grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+    }
+}
+@media all and (max-width: 360px) {
+  .main {
+    padding: 15px;
+  }
+
+  .lastWords {
+    font-size: 0.6rem;
+  }
+
+  .moreLinksInner a {
+    font-size: 0.75rem;
+  }
+
+  .langBox {
+    font-size: 0.75rem;
+    padding: 10px 12px;
+  }
+}
+
+
+@media all and (max-width: 480px) {
+    .main {
+        padding: 20px;
+    }
+
+    .box1 {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .moreLinks {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .moreLinksInner {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+        justify-items: center;
+        gap: 0.7rem;
+    }
+
+    .socialMediaIconsBox {
+        justify-content: center;
+    }
+
+    .lastWords {
+        font-size: 0.65rem;
+    }
+}

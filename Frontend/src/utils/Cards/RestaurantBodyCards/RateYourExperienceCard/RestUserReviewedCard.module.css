@@ -1,0 +1,37 @@
+.reviewCard {
+  background: #ffffff;
+  padding: 20px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.commentsSection {
+  margin-top: 10px;
+}
+
+.commentInputWrapper {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.commentInput {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+}
+
+.sendIcon {
+  color: #007bff;
+  cursor: pointer;
+  margin-left: 8px;
+  font-size: 1.4rem;
+  transition: color 0.3s ease;
+}
+
+.sendIcon:hover {
+  color: #0056b3;
+}

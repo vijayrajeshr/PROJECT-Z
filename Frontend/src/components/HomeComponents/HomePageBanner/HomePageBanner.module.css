@@ -1,0 +1,65 @@
+/* HomePageBanner.module.css */
+
+.banner {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Base height, adjust with Tailwind h-* classes if preferred */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Keeps navbar at top, content potentially at bottom */
+  color: #fff; /* Default text color for banner */
+  overflow: hidden; /* Ensures background image doesn't overflow */
+}
+
+.bannerImageContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Puts image behind content */
+}
+
+.bannerImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures image covers the area without distortion */
+  object-position: center; /* Centers the image */
+  filter: brightness(0.7); /* Slightly darken the image for text readability */
+  transition: transform 0.3s ease-in-out; /* Smooth hover effect */
+}
+
+.bannerImage:hover {
+  transform: scale(1.02); /* Slight zoom on hover if clickable */
+}
+
+.bannerOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.3),
+    rgba(0, 0, 0, 0.5)
+  ); /* Subtle gradient overlay */
+  z-index: -1; /* Below content but above image */
+}
+
+.bannerInner {
+  position: relative;
+  z-index: 1; /* Ensures content is above image/overlay */
+  /* Tailwind will handle flex centering for this now */
+}
+
+/* Keeping .bld for specific bolding if you want a custom color, otherwise use font-bold text-primary-500 */
+.bld {
+  /* Using a Tailwind color variable if defined, e.g., text-red-400 */
+  /* Or you can use a custom color: */
+  color: #ff7e8b; /* Zomato's brand color example */
+}
+
+/* No need for .title, .tag, .searchbar classes in CSS modules anymore, as Tailwind will handle them */
+/* You might keep a .searchbar if it has very specific internal layout that's not easily done with Tailwind */
+/* For now, we'll assume SearchBar component itself is styled or uses Tailwind internally */

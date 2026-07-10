@@ -1,0 +1,309 @@
+.navbar {
+  width: 100%;
+  height: 72px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background-color: transparent;
+  color: var(--color-white);
+  /* Use a more robust transition timing */
+  transition:
+    background-color 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+    border-bottom 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+    height 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+    color 0.3s ease;
+  display: flex;
+  align-items: center;
+}
+
+.scrolled {
+  position: fixed;
+  background-color: rgba(255, 255, 255, 0.98);
+  color: var(--color-title-text);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+  /* Thin black border as requested */
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.12);
+  height: 64px;
+  animation: slideNavDown 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes slideNavDown {
+  from {
+    transform: translateY(-100%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+.navbarInner {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  height: 100%;
+  padding: 0 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: max-width 0.3s ease;
+}
+
+.scrolled .navbarInner {
+  max-width: 1400px;
+}
+
+.leftSide {
+  display: flex;
+  align-items: center;
+}
+
+.leftContent {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.img {
+  width: 16px;
+  height: 16px;
+  filter: brightness(0) invert(1);
+  transition: filter 0.3s ease;
+}
+
+.scrolled .img {
+  filter: none;
+}
+
+.appTxt {
+  color: inherit;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.logoTxt {
+  font-size: 2rem;
+  font-weight: 800;
+  color: white;
+  text-decoration: none;
+  letter-spacing: -0.5px;
+}
+
+.getAppTxt {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #ff7e33;
+  text-decoration: none;
+}
+
+.rightSide {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  transition: all 0.3s ease;
+}
+
+.scrolled .rightSide {
+  margin-left: auto;
+}
+
+.desktopNavLinks {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.menuItem {
+  color: white;
+  text-decoration: none;
+  font-size: 1.15rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.menuItem:hover {
+  opacity: 0.8;
+}
+
+.scrolled .menuItem {
+  color: #1c1c1c;
+  font-weight: 500;
+}
+
+/* User Profile */
+.profileContainer {
+  position: relative;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  cursor: pointer;
+}
+
+/* Profile specific styles remain standard to match project */
+.profilePic {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profileName {
+  font-size: 1.05rem;
+  font-weight: 400;
+}
+
+.arrow {
+  width: 10px;
+  height: 10px;
+  filter: invert(1);
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.scrolled .arrow {
+  filter: none;
+}
+
+.menu {
+  position: absolute;
+  top: calc(100% + 12px);
+  right: 0;
+  width: 190px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.menuItemLink {
+  padding: 12px 16px;
+  font-size: 1rem;
+  color: #333;
+  cursor: pointer;
+}
+
+.menuItemLink:hover {
+  background-color: #f8f8f8;
+}
+
+.menuItemLinkTxt {
+  text-decoration: none;
+}
+
+/* Auth Buttons */
+.desktopAuthButtons {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.loginBtn {
+  cursor: pointer;
+  font-size: 1.15rem;
+  font-weight: 300;
+}
+
+.scrolled .loginBtn {
+  color: var(--color-title-text);
+  font-weight: 400;
+}
+
+/* Signup Button: Dynamic based on scroll */
+.signupBtn {
+  cursor: pointer;
+  font-size: 1.15rem;
+  font-weight: 600;
+  padding: 0.7rem 2.2rem;
+  border-radius: 50px;
+  /* Pill shape */
+  background-color: white;
+  color: #ff7e33;
+  border: 1px solid white;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.signupBtn:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.scrolled .signupBtn {
+  background-color: #ff7e33;
+  border-color: #ff7e33;
+  color: white;
+}
+
+.scrolled .signupBtn:hover {
+  background-color: #e66b26;
+  border-color: #e66b26;
+}
+
+/* Mobile responsive */
+.hamburgerContainer {
+  display: none;
+}
+
+@media (max-width: 960px) {
+
+  .desktopNavLinks,
+  .desktopAuthButtons,
+  .leftSide {
+    display: none;
+  }
+
+  .hamburgerContainer {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .hamburgerContainer::before {
+    content: 'Zomato';
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: inherit;
+  }
+}
+
+.hamburgerButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+}
+
+.hamburgerMenu {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 1.5rem;
+  width: 240px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  padding: 8px 0;
+}
+
+.hamburgerMenuItem {
+  padding: 12px 20px;
+  color: #333;
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+
+.menuDivider {
+  border: none;
+  border-top: 1px solid #eee;
+  margin: 8px 0;
+}

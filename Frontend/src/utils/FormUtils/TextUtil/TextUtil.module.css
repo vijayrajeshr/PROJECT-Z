@@ -1,0 +1,48 @@
+.fieldBox {
+    width: 100%;
+    margin: 0.8rem 0;
+    position: relative;
+}
+
+.field {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid #D9D9D9;
+    border-radius: 8px;
+    outline: none;
+    font-size: 0.95rem;
+    color: #333;
+    background-color: #fff;
+    transition: all 0.2s ease;
+}
+
+.field:focus {
+    border-color: #D9D9D9 ;
+    box-shadow: 0 0 0 2px rgba(252, 129, 129, 0.1);
+}
+
+.field[type="date"] {
+    padding: 0.7rem 1rem;
+    cursor: pointer;
+}
+
+.field[as="select"] {
+    appearance: none;
+    cursor: pointer;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="%23333" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 0.7rem center;
+    padding-right: 2.5rem;
+}
+
+.field:disabled {
+    background-color: #F7F7F7;
+    cursor: not-allowed;
+}
+
+.errorMessage {
+    color: #E53E3E;
+    font-size: 0.8rem;
+    margin-top: 0.3rem;
+    padding-left: 0.5rem;
+}

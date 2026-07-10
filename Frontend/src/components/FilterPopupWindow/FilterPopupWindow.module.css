@@ -1,0 +1,198 @@
+.filterWindow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 99;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0000006b;
+}
+
+.filterBoxWrapper {
+  background-color: white;
+  width: 56%;
+  min-width: 480px;
+  /* Fixed height so the popup won't extend beyond this */
+  height: 80vh;
+  max-height: 80vh;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.header {
+  height: 60px;
+  border-bottom: 1px solid var(--bg-ash);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px;
+}
+
+.header h2 {
+  font-weight: 500;
+  margin: 0;
+}
+
+.closeBtn {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.container {
+  display: flex;
+  flex: 1;
+  overflow: hidden; /* We'll scroll in .sidebar and .main */
+}
+
+.sidebar {
+  flex: 0.3;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  border-right: 1px solid #ddd;
+  overflow-y: auto; /* scroll if too many tabs */
+}
+
+.tab {
+  padding: 16px;
+  cursor: pointer;
+}
+
+.active {
+  background-color: #fff;
+  border-left: 4px solid #02757A;
+}
+
+.main {
+  flex: 0.7;
+  margin: 12px;
+  overflow-y: auto; /* scroll if content is large */
+}
+
+/* Vertical stacking of each option (radio/checkbox) */
+.optionsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 12px; /* space between each item */
+  /* padding: 4rem; */
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+}
+
+.option input {
+  margin-right: 6px;
+}
+
+.footer {
+  display: flex;
+  justify-content: flex-end; /* both on the right side */
+  gap: 16px; /* space between the two buttons */
+  padding: 16px;
+  border-top: 1px solid #ddd;
+}
+
+.applyBtn {
+  background-color:#02757A;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.clearBtn {
+  background-color: transparent;
+  color: #02757A;
+  border: 1px solid #02757A;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Cuisines search bar */
+.searchBar {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  top: 0;
+  position: sticky;
+}
+
+/* Cuisine list container */
+.cuisineList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Rating / Cost slider container */
+.sliderContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sliderLabel {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.sliderMarks {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: #555;
+}
+
+input[type="radio"],
+input[type="checkbox"],
+input[type="range"] {
+  accent-color: #02757A;
+  cursor: pointer; 
+}
+input[type="radio"] {
+  color: #02757A;
+  font: inherit;
+  border: 1px solid #02757A;
+}
+input[type="radio"]::before {
+  background-color: #02757A;
+  color: #02757A;
+  box-shadow: inset 1em 1em #02757A;
+  background: #02757A; 
+}
+
+input[type="radio"]:checked {
+  transform: scale(1);
+  color: #02757A;
+  border: 1px solid #02757A;
+}
+input[type="radio"]::after{
+  background-color: #02757A;
+  border: 1px solid #02757A;
+}
+
+@media (max-width: 576px) {
+  .filterBoxWrapper {
+    width: 100%;
+    min-width: 100%;
+    height: 100vh;
+    max-height: 100vh;
+    border-radius: 0;
+  }
+  .tab {
+    padding: 12px;
+  }
+}

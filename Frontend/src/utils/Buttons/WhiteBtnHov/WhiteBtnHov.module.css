@@ -1,0 +1,32 @@
+:root {
+  --btn-bg: #02757A;        /* default button background */
+  --btn-hover-bg: #026a6f;  /* hover */
+  --btn-active-bg: #01464a; /* active/click */
+  --btn-text: #ffffff;      /* button text */
+}
+
+.btn {
+  padding: 0.5rem 1rem;
+  background-color: var(--btn-bg);
+  border-radius: 5px;
+  border: none;
+  margin: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  font-weight: 500;
+  color: var(--btn-text);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: var(--btn-hover-bg);
+}
+
+.btn:active,
+.activeButton {
+  background-color: var(--btn-active-bg);
+  color: var(--btn-text);
+}

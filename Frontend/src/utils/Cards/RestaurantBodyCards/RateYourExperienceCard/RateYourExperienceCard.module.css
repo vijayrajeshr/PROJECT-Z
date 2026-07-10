@@ -1,0 +1,140 @@
+.outerDiv {
+  background-color: #ffffff; /* White background for the card */
+  border-radius: 8px; /* Slightly more rounded corners */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Softer, more spread shadow */
+  padding: 24px; /* Increased padding */
+  margin-bottom: 24px;
+  border: 1px solid #e2e8f0; /* Subtle border */
+}
+
+.innerDiv {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem; /* Consistent gap between sections */
+}
+
+.ttl {
+  font-size: 1.125rem; /* Adjusted title size */
+  font-weight: 600;
+  color: #1a202c; /* Darker gray for better contrast */
+  margin: 0; /* Remove default margins if any */
+}
+
+.radioGroup {
+  display: flex;
+  gap: 16px; /* Space between radio buttons */
+}
+
+.ratingFlex {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Gap between stars */
+}
+
+.ratingTxt {
+  margin-left: 8px; /* Adjusted margin */
+  font-size: 0.875rem;
+  color: #4a5568; /* Medium gray */
+  font-weight: 500;
+}
+
+.modalTxt {
+  display: none; /* Hide the element */
+}
+
+.reviewSection {
+  display: flex;
+  flex-direction: column;
+  gap: 12px; /* Gap between textarea and actions */
+}
+
+.textarea {
+  border: 1px solid #cbd5e0; /* Slightly darker border */
+  border-radius: 6px; /* Consistent rounding */
+  padding: 10px 12px; /* Comfortable padding */
+  resize: vertical; /* Allow vertical resize only */
+  min-height: 100px;
+  font-size: 0.9rem;
+  color: #2d3748; /* Slightly darker text */
+  line-height: 1.5;
+  transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Smooth transitions */
+}
+
+.textarea:focus {
+  outline: none;
+  border-color: #4299e1; /* Blue border on focus */
+  box-shadow: 0 0 0 2px rgba(66, 153, 225, 0.5); /* Subtle blue glow on focus */
+}
+
+.reviewActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px; /* Gap between buttons */
+}
+
+.baseButton {
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out,
+    box-shadow 0.2s ease-in-out;
+  border: 1px solid transparent; /* Base border */
+}
+
+.baseButton:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5); /* Consistent focus glow */
+}
+
+.cancelBtn {
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out,
+    box-shadow 0.2s ease-in-out;
+  border: 1px solid #e2e8f0; /* Light border */
+  background-color: #ffffff; /* White background */
+  color: #4a5568; /* Medium gray text */
+}
+
+.cancelBtn:hover {
+  background-color: #f7fafc; /* Very light gray on hover */
+  border-color: #cbd5e0;
+}
+
+.cancelBtn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(203, 213, 224, 0.5); /* Gray focus glow */
+}
+
+.submitBtn {
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out,
+    box-shadow 0.2s ease-in-out;
+  border: 1px solid transparent; /* Base border */
+  background-color: #e53e3e; /* Red background color */
+  color: white; /* White text color */
+}
+
+.submitBtn:hover {
+  background-color: #c53030; /* Darker red on hover */
+}
+
+.submitBtn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.6); /* Red focus glow */
+}
+
+.submitBtn:disabled {
+  background-color: #f56565; /* Lighter red when disabled */
+  cursor: not-allowed;
+  opacity: 0.7;
+}

@@ -1,0 +1,576 @@
+/* .outerDiv{
+    width: 100%;
+    height: 100%;
+    border-bottom: var(--brd4);
+}
+
+.innerDiv{
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+}
+
+.sec1{
+    display: flex;
+    margin: 1rem 0;
+    justify-content: space-between;
+}
+
+.leftBox{
+    display: flex;
+    align-items: center;
+}
+
+.imgBox{
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+}
+
+.hotelImg{
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+
+.txtBox1{
+    margin-left: 10px;
+}
+
+.title{
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.address{
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: var(--color-p3-text);
+}
+
+.rightBox{
+    position: relative;
+}
+
+.downArrow{
+    cursor: pointer;
+}
+
+.dropDown{
+    position: absolute;
+    top: 30px;
+    right: 0px;
+    width: 150px;
+    height: auto;
+    padding: 10px 0;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow2);
+}
+
+.opt{
+    cursor: pointer;
+    padding: 10px;
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+.opt:hover{
+    background-color: var(--bg-ash);
+}
+
+.sec{
+    margin: 1rem 0;
+    display: flex;
+    align-items: center;
+}
+
+.delivery{
+    display: flex;
+    align-items: center;
+}
+
+.starDiv{
+    display: flex;
+    width: max-content;
+    height: min-content;
+    padding: 1px 3px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    font-weight: 700;    
+    text-align: center;
+    line-height: 1.5;
+    color: var(--color-white);
+    background-color: var(--bg-dark-greenish);
+}
+
+.starIcon{
+    width: 10px;
+    height: 10px;
+    filter: invert(1);
+}
+
+.delTxt{
+    margin: 0 0.5rem;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    color: var(--color-p3-text);
+}
+
+.days{
+    color: var(--color-p5-text);
+}
+
+.txt{
+    font-size: 0.9rem;
+    color: var(--color-p3-text);
+    letter-spacing: 0.5px;
+}
+
+.txtBox2{
+    display: flex;
+    padding: 8px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.txtBox2:hover{
+    background-color: var(--bg-f8f8f8);
+}
+
+.icon{
+    width: 20px;
+    height: 20px;
+}
+
+.txt2{
+    font-size: 0.9rem;
+    margin: 0px 0.3rem;
+    color: var(--color-p3-text);
+}
+
+.commentBox{
+    padding: 1rem 0;
+    display: flex;
+    align-items: center;
+    border-bottom: var(--brd4);
+}
+
+.userImgBox{
+    width: 50px;
+    height: 48px;
+    border-radius: 50%;
+    margin-right: 1rem;
+}
+
+.userImg{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.inputBox{
+    width: 100%;
+    height: 50px;
+}
+
+.inptTxtBox{
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    outline: none;
+    font-size: 1rem;
+    border-radius: 10px;
+    border: var(--brd2);
+}
+
+.inptTxtBox:focus{
+    border: 1px solid var(--brd-greenish-color);
+}
+
+.inptTxtBox::placeholder{
+    font-size: 1.1rem;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    color: var(--color-p1-text);
+}
+
+.alertBox{
+    position: fixed;
+    top: 2rem;
+    width: 400px;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    color: var(--color-greenish2);
+    font-weight: 300;
+    background-color: var(--bg-greenish2);
+}
+
+.closeImg{
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+    filter: grayscale(100%) brightness(80%) sepia(300%) hue-rotate(50deg) saturate(500%);
+}
+
+.dnone{
+    display: none;
+} */
+
+/* UserReviewedCard.module.css */
+
+/* --- Base Container Styling --- */
+.outerDiv {
+  background-color: #ffffff; /* White background for the card */
+  border-radius: 12px; /* Slightly more rounded corners */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Soft, subtle shadow */
+  margin-bottom: 25px; /* More space between cards */
+  overflow: hidden; /* Ensures content stays within rounded corners */
+}
+
+.innerDiv {
+  padding: 20px; /* Consistent padding inside the card */
+}
+
+/* --- Alert Box Styling --- */
+.alertBox {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #4CAF50; /* A friendly success green */
+  color: white;
+  padding: 12px 25px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px; /* Space between text and close icon */
+  z-index: 1000; /* Ensure it's on top */
+  font-size: 0.95rem; /* Slightly larger font for readability */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Shadow for pop-out effect */
+  animation: fadeInOut 5s forwards; /* Animation for visibility */
+}
+
+.alertBox.dnone {
+  display: none;
+}
+
+.closeImg {
+  width: 18px; /* Slightly larger close icon */
+  height: 18px;
+  cursor: pointer;
+  filter: invert(100%); /* Make close icon white */
+  transition: transform 0.2s ease-in-out;
+}
+
+.closeImg:hover {
+  transform: scale(1.1); /* Subtle hover effect */
+}
+
+/* Keyframe for fade in and out */
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translateX(-50%) translateY(-20px); }
+  10% { opacity: 1; transform: translateX(-50%) translateY(0); }
+  90% { opacity: 1; transform: translateX(-50%) translateY(0); }
+  100% { opacity: 0; transform: translateX(-50%) translateY(-20px); }
+}
+
+
+/* --- Section 1: Top Bar (Image, Title, Dropdown) --- */
+.sec1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px; /* Space below this section */
+  position: relative; /* For dropdown positioning */
+}
+
+.leftBox {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Space between image and text */
+}
+
+.imgBox {
+  width: 60px; /* Slightly larger image container */
+  height: 60px;
+  border-radius: 8px; /* Slightly rounded corners for image */
+  overflow: hidden;
+  flex-shrink: 0; /* Prevent image box from shrinking */
+}
+
+.hotelImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensure image covers the area */
+  display: block;
+}
+
+.txtBox1 {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 1.15rem; /* More prominent title */
+  font-weight: 600; /* Semi-bold */
+  color: #333; /* Darker text for better contrast */
+  margin-bottom: 4px; /* Space between title and address */
+}
+
+.address {
+  font-size: 0.9rem; /* Slightly smaller address */
+  color: #777; /* Softer color for address */
+}
+
+.rightBox {
+  position: relative; /* For dropdown positioning */
+}
+
+.downArrow {
+  padding: 8px; /* Larger clickable area */
+  cursor: pointer;
+  border-radius: 50%; /* Make it circular */
+  transition: background-color 0.2s ease-in-out; /* Smooth hover */
+}
+
+.downArrow:hover {
+  background-color: #f0f0f0; /* Light background on hover */
+}
+
+.downArrowImg {
+  width: 18px; /* Adjust icon size */
+  height: 18px;
+  display: block;
+}
+
+.dropDown {
+  position: absolute;
+  top: 100%; /* Position below the arrow */
+  right: 0;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  min-width: 120px; /* Minimum width for dropdown */
+  padding: 8px 0;
+  z-index: 10; /* Ensure it's above other content */
+}
+
+.opt {
+  padding: 10px 15px;
+  font-size: 0.95rem;
+  color: #555;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.opt:hover {
+  background-color: #f5f5f5; /* Light hover background */
+}
+
+/* --- Section 2: Rating and Date --- */
+.sec {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px; /* Space below this section */
+}
+
+.ratingBox {
+  display: flex;
+  align-items: center;
+  background-color: #4CAF50; /* Green background for rating */
+  color: white;
+  padding: 4px 10px;
+  border-radius: 6px; /* Slightly rounded corners */
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-right: 15px; /* Space between rating and days */
+}
+
+.starDiv {
+  display: flex;
+  align-items: center;
+  gap: 4px; /* Space between number and star icon */
+}
+
+.starIcon {
+  width: 14px; /* Adjust star icon size */
+  height: 14px;
+  filter: invert(100%); /* Make star icon white */
+}
+
+.reviewType {
+  font-size: 0.85rem; /* Smaller, subtle review type */
+  color: #e0e0e0; /* Lighter color within the green box */
+  margin-left: 5px; /* Space between stars and review type */
+}
+
+.days {
+  font-size: 0.9rem;
+  color: #888; /* Muted color for date */
+}
+
+/* --- Section: Review Text --- */
+.reviewTextSection {
+  margin-bottom: 20px; /* More space below the review text */
+}
+
+.reviewTextContent {
+  font-size: 1rem; /* Standard font size for content */
+  line-height: 1.6; /* Improved line spacing for readability */
+  color: #444; /* Darker text for main content */
+  font-style: italic; /* Emphasize it's a quote */
+  margin: 0; /* Remove default paragraph margin */
+}
+
+/* --- Section: Likes and Comments Count --- */
+/* This .sec also applies to the action buttons, but for the count text,
+   we need specific styling if different from action buttons */
+.sec:nth-of-type(3) { /* Targeting the third .sec for specific margin */
+  margin-bottom: 20px;
+}
+
+.txt {
+  font-size: 0.9rem;
+  color: #666; /* Muted color for counts */
+}
+
+/* --- Section: Action Buttons (Like, Comment, Share) --- */
+.sec:last-of-type { /* Target the last .sec for action buttons */
+  border-top: 1px solid #eee; /* Subtle separator line */
+  padding-top: 15px; /* Padding above buttons */
+  margin-bottom: 0; /* Remove bottom margin if it's the last section */
+  justify-content: space-around; /* Distribute buttons evenly */
+}
+
+.txtBox2 {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Space between icon and text */
+  cursor: pointer;
+  padding: 8px 12px; /* Add padding for larger clickable area */
+  border-radius: 6px;
+  transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out;
+}
+
+.txtBox2:hover {
+  background-color: #f0f0f0;
+  transform: translateY(-2px); /* Slight lift on hover */
+}
+
+.txtBox2:active {
+  transform: translateY(0); /* Press down effect */
+}
+
+
+.icon {
+  width: 20px; /* Slightly larger icons for better visibility */
+  height: 20px;
+  display: block; /* Remove extra space below images */
+}
+
+.txt2 {
+  font-size: 0.95rem; /* Slightly larger text for actions */
+  font-weight: 500;
+  color: #555; /* Medium grey for action text */
+}
+
+/* Specific styling for liked state */
+.txtBox2:hover .txt2 {
+  color: #333; /* Darken text on hover */
+}
+
+/* If you want liked icon to be red/blue etc. add specific filter */
+/* Example for liked icon being red */
+/* .txtBox2 .icon.liked {
+    filter: invert(20%) sepia(80%) saturate(600%) hue-rotate(330deg) brightness(90%);
+} */
+
+
+/* --- Comment Box Styling --- */
+.commentBox {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background-color: #f9f9f9; /* Light background for comment box */
+  border-top: 1px solid #eee; /* Separator from the main card */
+  padding: 15px 20px; /* Padding for the comment section */
+  border-bottom-left-radius: 12px; /* Match card border radius */
+  border-bottom-right-radius: 12px;
+}
+
+.userImgBox {
+  width: 40px; /* Smaller user image for comments */
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  border: 1px solid #ddd; /* Subtle border for user image */
+}
+
+.userImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.inputBox {
+  flex-grow: 1; /* Allows input to take available space */
+}
+
+.inptTxtBox {
+  width: 100%;
+  padding: 12px 15px; /* More padding for a larger input field */
+  border: 1px solid #ddd; /* Light border */
+  border-radius: 25px; /* Pill-shaped input */
+  font-size: 0.95rem;
+  color: #333;
+  outline: none; /* Remove default outline */
+  transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.inptTxtBox::placeholder {
+  color: #aaa; /* Lighter placeholder text */
+}
+
+.inptTxtBox:focus {
+  border-color: #007bff; /* Blue border on focus */
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25); /* Subtle glow on focus */
+}
+
+/* --- Responsive Considerations (Optional but recommended) --- */
+@media (max-width: 768px) {
+  .innerDiv {
+    padding: 15px;
+  }
+
+  .sec1 {
+    flex-direction: column; /* Stack elements on smaller screens */
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .leftBox {
+    width: 100%; /* Full width for left box */
+    margin-bottom: 10px;
+  }
+
+  .rightBox {
+    align-self: flex-end; /* Keep dropdown to the right */
+  }
+
+  .sec:last-of-type {
+    flex-direction: column; /* Stack action buttons */
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .txtBox2 {
+    width: 100%; /* Make action buttons full width */
+    justify-content: center; /* Center content within button */
+  }
+}

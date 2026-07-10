@@ -1,0 +1,240 @@
+/* Base Styles */
+.outerDiv {
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  max-width: 1400px;
+  margin: 0 auto;
+  overflow-x: hidden;
+  margin-top: -30px;
+}
+
+.ttl {
+  font-size: 25px;
+  font-weight: 700;
+  margin-bottom: -30px;
+  margin-top: -8px;
+  color: #333;
+  text-align: center;
+  padding-top: 0;
+}
+
+
+/* Sticky Heading Styles */
+.stickyHeading {
+  font-size: 20px;
+  font-weight: 700;
+  color: black;
+  position: sticky;
+  top: 40px;
+  background: white;
+  padding: 6px 0;
+  z-index: 9;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+  margin-bottom: 12px;
+  transition: all 0.3s ease;
+}
+
+.stickyHeading:hover {
+  color: black;
+  border-bottom: 2px solid white;
+  padding-bottom: 8px;
+}
+
+/* Section Styles */
+.sections {
+  padding: 16px;
+}
+
+.itemsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+  margin-top: 8px;
+  width: 100%;
+}
+
+/* Updated Item Card Styles */
+.itemCard {
+  padding: 16px;
+  background-color: white;
+  position: relative;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+  max-width: 100%;
+}
+
+.itemCard:hover {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+}
+
+.nameAndPrice {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  gap: 8px;
+
+}
+
+.nameContainer {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.nameContainer strong {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #333;
+  margin-left: 4px;
+}
+
+.price {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color:#02757A;
+}
+
+.section:nth-child(2),
+.section:nth-child(3) {
+  margin-top: 24px;
+}
+
+.section:first-of-type {
+  margin-top: 0 !important;
+}
+
+.description {
+  font-size: 0.9rem;
+  color: #555;
+  margin: 8px 0;
+  line-height: 1.4;
+}
+
+.iconWrapper {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  cursor: pointer;
+}
+
+.infoIcon {
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  bottom: 8px;
+  right: 16px;
+  cursor: pointer;
+}
+
+.vegIcon {
+  width: 16px;
+  height: 16px;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 1200px) {
+  .itemsGrid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .outerDiv {
+    padding: 12px;
+  }
+
+  .ttl {
+    font-size: 22px;
+  }
+
+  .stickyHeading {
+    font-size: 18px;
+    top: 30px;
+  }
+
+  .itemsGrid {
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 12px;
+  }
+
+  .itemCard {
+    padding: 12px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .outerDiv {
+    padding: 8px;
+  }
+
+  .ttl {
+    font-size: 20px;
+  }
+
+  .stickyHeading {
+    font-size: 16px;
+    top: 20px;
+  }
+
+  .itemsGrid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+  }
+
+  .nameContainer strong {
+    font-size: 0.95rem;
+  }
+
+  .price {
+    font-size: 1rem;
+  }
+
+  .description {
+    font-size: 0.85rem;
+  }
+
+  .infoIcon {
+    width: 13px;
+    height: 13px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .itemsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .ttl {
+    font-size: 18px;
+  }
+
+  .stickyHeading {
+    font-size: 15px;
+  }
+
+  .nameAndPrice {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .price {
+    margin-top: 4px;
+  }
+}
+/* Add margin-top to Snacks and Light Meals on smaller screens */
+@media screen and (max-width: 768px) {
+  .section:nth-child(2),  /* Snacks */
+  .section:nth-child(3) { /* Light Meals */
+    margin-top: 24px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .section:nth-child(2),
+  .section:nth-child(3) {
+    margin-top: 32px;
+  }
+}
+

@@ -1,0 +1,82 @@
+/* Ensures the body takes full height and removes scrolling */
+.bodySize {
+  width: 100%;
+  min-height: 100vh; /* Makes sure the body takes at least the full viewport height */
+  display: flex;
+  flex-direction: column; /* Align the content vertically */
+  justify-content: flex-start; /* Align items at the top of the screen */
+  overflow: hidden; /* Prevent scrolling */
+  padding-left: 4rem;
+  padding-right: 4rem;
+}
+
+/* .chooseTypeCards {
+  width: 100%;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  overflow: hidden; 
+}
+
+.chooseTypeCards .card {
+  width: 400px; 
+  height: 250px; 
+  padding: 20px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  border-radius: 15px; 
+  background-color: #fff; 
+  transition: transform 0.3s ease-in-out;
+  overflow: hidden; 
+} */
+
+/* .chooseTypeCards .card:hover {
+  transform: scale(1.05); /* Slight enlargement on hover 
+} 
+  */
+
+
+/* Responsive Design for Mobile Screens */
+
+
+.chooseTypeCards {
+  width: 100%;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; 
+  gap: 10px;
+  overflow: hidden;
+  box-sizing: border-box;
+  padding: 0 10px; /* optional: small side padding */
+}
+
+.chooseTypeCards .card {
+  flex: 1 1 500px; /* grow and shrink, base size 300px */
+  max-width: 600px; /* max width on large screens */
+  height: 450px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  background-color: #E6F1F2;
+  transition: transform 0.3s ease-in-out;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.chooseTypeCards .card:hover {
+  transform: scale(1.05);
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 600px) {
+  .chooseTypeCards {
+    justify-content: center;
+  }
+  .chooseTypeCards .card {
+    flex: 1 1 90%; /* cards take almost full width on small screens */
+    max-width: none;
+    height: auto; /* height can auto adjust */
+  }
+}

@@ -1,0 +1,151 @@
+.outerDiv {
+  width: 100%;
+  min-height: 250px; /* ✅ allow flexible height */
+ 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* ✅ prevent overflow */
+  background-color: #ffffff; /* teal brand color */
+  overflow-x: hidden; /* ✅ prevent horizontal overflow */
+}
+
+.innerDiv {
+  width: 60%;
+  height: 100%;
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden; /* ✅ clip text inside */
+}
+
+.imgBox {
+  width: 100%;
+  height: 100%;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.textBox {
+  padding: 2rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0; /* ✅ keep inside container */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: var(--color-white);
+  z-index: 20;
+  box-sizing: border-box;
+}
+
+.title {
+  font-size: 2.3rem;
+  font-weight: 400;
+  line-height: 1.3; /* ✅ better wrapping */
+  word-break: break-word;
+}
+
+.tag {
+  margin: 1.4rem 0;
+  font-size: 1rem;
+  max-width: 90%; /* ✅ prevent overflow */
+  word-break: break-word;
+}
+
+.btn {
+  padding: 0.8rem 1.2rem; /* ✅ flexible instead of fixed width */
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background-color: #02757a;
+  max-width: 100%; /* ✅ prevent button overflow */
+}
+
+.btnTitle {
+  color: var(--color-white);
+  font-weight: 400;
+  font-size: 0.9rem;
+  white-space: nowrap; /* ✅ keep text in one line */
+}
+
+.btnArrow {
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.arrow {
+  width: 8px;
+  height: 10px;
+  filter: invert(1);
+}
+
+/* Tablet */
+@media all and (max-width: 1020px) {
+  .innerDiv {
+    width: 80%;
+  }
+  .title {
+    font-size: 2rem;
+  }
+}
+
+/* Mobile landscape / small tablets */
+@media all and (max-width: 780px) {
+  .outerDiv {
+    margin: 2rem 0;
+  }
+
+  .innerDiv {
+    width: 90%;
+  }
+
+  .title {
+    font-size: 1.6rem;
+  }
+
+  .tag {
+    margin: 1rem 0;
+    font-size: 0.9rem;
+  }
+}
+
+/* Small mobile */
+@media all and (max-width: 530px) {
+  .outerDiv {
+    margin: 1rem 0;
+  }
+
+  .innerDiv {
+    width: 100%;
+  }
+
+  .textBox {
+    padding: 1rem; /* ✅ reduce padding */
+    text-align: center;
+  }
+
+  .title {
+    font-size: 1.3rem;
+  }
+
+  .tag {
+    font-size: 0.85rem;
+    max-width: 100%;
+    margin: 0.8rem 0;
+  }
+
+  .btn {
+    width: 100%; /* ✅ button stretches full width */
+    justify-content: center;
+  }
+}

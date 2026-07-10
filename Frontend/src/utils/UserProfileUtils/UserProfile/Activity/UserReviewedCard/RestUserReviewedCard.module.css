@@ -1,0 +1,39 @@
+.reviewCard {
+    padding: 1rem;
+    border: 1px solid #ddd;
+    margin-bottom: 1rem;
+  }
+  
+  .commentsSection {
+    margin-top: 1rem;
+  }
+  
+  .comment {
+    background: #f9f9f9;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    border-radius: 4px;
+  }
+  
+  .commentInput {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+  
+  .commentInput input {
+    flex: 1;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .commentInput button {
+    background: var(--color-redish1);
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  

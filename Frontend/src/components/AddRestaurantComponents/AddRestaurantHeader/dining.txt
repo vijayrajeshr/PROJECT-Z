@@ -1,0 +1,542 @@
+import React, { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
+import css from "./Dining.module.css";
+import Step1 from "./Step1";
+import Step3 from "./Step3";
+import Step4 from "./Step4";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+
+const Dining = () => {
+  const location = useLocation();
+  const [serviceType, setServiceType] = useState("dining"); // Default to dining
+  const navigate = useNavigate();
+
+  const [formData, setFormData] = useState({
+    // Step 1 fields
+    restaurantName: "",
+    ownerName: "",
+    email: "",
+    ownerPhoneNumber: "",
+    ownerCountryCode: "+91",
+    useNumberViaWhatsApp: false,
+    useSamePhoneNumber: false,
+    restaurantPhoneNumber: "",
+    restaurantCountryCode: "+91",
+    location: "",
+    shopNo1: "",
+    shopNo2: "",
+    area: "",
+    city: "",
+    landmark: "",
+    referred: false,
+    referralEmail: "",
+    latitude: null,
+    longitude: null,
+
+    // Step 3 placeholders (document details, etc.)
+    commercialKitchen: "",
+    foodHandlerCertificate: "",
+    hourlyBasedKitchen: "",
+    operatingCity: "",
+    businessDetails: "",
+    foodHandlerCertificateFile: null,
+
+    // Step 4 placeholders (sample product info, etc.)
+    productName: "",
+    category: "",
+    bestSeller: "",
+    price: "",
+    description: "",
+    group: "",
+    images: [],
+    dietary: [],
+    foodQualitySafety: "",
+
+    // Checkboxes
+    categoryVeg: false,
+    categoryNonVeg: false,
+    categoryBoth: false,
+
+    serviceNightLife: false,
+    serviceDineOut: false,
+    serviceDelivery: false,
+    serviceTiffin: false,
+
+    // Cuisines
+    cuisines: [],
+    newCuisine: "",
+
+    // Price range
+    priceRange: "50",
+
+    // Additional fields for Tiffin service
+    cities: [],
+    mealDays: [],
+    flexibleOrderDates: false,
+  });
+
+  // Determine the service type from the URL or state passed from previous page
+  useEffect(() => {
+    // Extract service type from URL or location state
+    const pathname = location.pathname.toLowerCase();
+    if (pathname.includes("tiffin")) {
+      setServiceType("tiffin");
+    } else {
+      // Check if there's state from the previous page
+      if (location.state && location.state.serviceType) {
+        setServiceType(location.state.serviceType);
+      }
+    }
+  }, [location]);
+
+  // Current step in the multi-step form
+  const [activeStep, setActiveStep] = useState(0);
+
+  // For final "success" modal
+  const [showModal, setShowModal] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+
+  // Scroll to top whenever step changes
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [activeStep]);
+
+  // Update formData on input change
+  const handleChange = (e) => {
+    const { name, value, type, checked } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: type === "checkbox" ? checked : value,
+    }));
+  };
+
+  // For file uploads (Step 3)
+  const handleFileUpload = (e) => {
+    setFormData((prev) => ({
+      ...prev,
+      foodHandlerCertificateFile: e.target.files[0],
+    }));
+  };
+
+  // Called when user clicks "Next" (for step 0 or 1)
+  const handleNext = async () => {
+    const formElement = document.getElementById("multiStepForm");
+
+    if (formElement.reportValidity()) {
+      if (activeStep === 0) {
+        // For Step 1, submit to API before moving to next step
+        await handleSubmit({ preventDefault: () => {} });
+        // The handleSubmit function will advance the step if successful
+      } else if (activeStep === 1) {
+        // For Step 2 (documents), validate document requirements before advancing
+
+        // Check if document validation was performed
+        if (!formData.documentValidation) {
+          alert("Please upload the required documents before proceeding.");
+          return;
+        }
+
+        // Verify that mandatory documents and at least one KYC document are uploaded
+        if (!formData.documentValidation.isValid) {
+          if (!formData.documentValidation.hasMandatoryDocs) {
+            alert(
+              "Business Registration Certificate and Hygiene Certificate are both required."
+            );
+          } else if (!formData.documentValidation.hasKycDoc) {
+            alert("Please upload at least one identification document.");
+          }
+          return;
+        }
+
+        // If validation passes, advance to next step
+        setActiveStep((prev) => prev + 1);
+      } else {
+        // For other steps, simply advance
+        setActiveStep((prev) => prev + 1);
+      }
+    }
+  };
+  const onSubmit = () => {
+    navigate("/add-restaurant"); // Or redirect elsewhere
+  };
+
+  // Called when user clicks "Previous"
+  const handlePrevious = () => {
+    setActiveStep((prev) => prev - 1);
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const formElement = document.getElementById("multiStepForm");
+
+    if (formElement.reportValidity()) {
+      try {
+        // Step 1: Submit restaurant/tiffin information
+        if (activeStep === 0) {
+          // Prepare data for API from Step 1
+          const category = formData.categoryBoth
+            ? "Both"
+            : formData.categoryVeg
+            ? "veg"
+            : formData.categoryNonVeg
+            ? "non-veg"
+            : "";
+
+          // Create base payload
+          let payload = {
+            firmName: formData.restaurantName,
+            ownerName: formData.ownerName,
+            ownerEmail: formData.email,
+            ownerPhone: formData.ownerCountryCode + formData.ownerPhoneNumber,
+            primaryContactNumber: formData.useSamePhoneNumber
+              ? formData.ownerCountryCode + formData.ownerPhoneNumber
+              : formData.restaurantCountryCode + formData.restaurantPhoneNumber,
+            category: category,
+          };
+
+          // Customize payload based on service type
+          if (serviceType === "tiffin") {
+            // Map form data to the existing Tiffin model structure
+            payload = {
+              ...payload,
+              cities: formData.cities || [],
+              mealDays: formData.mealDays || [],
+              flexibleOrderDates: formData.flexibleOrderDates || false,
+              cuisines: formData.cuisines || [], // For meal types in Tiffin model
+            };
+          } else {
+            // Restaurant-specific data
+            const services = [];
+            if (formData.serviceNightLife) services.push("Night Life");
+            if (formData.serviceDineOut) services.push("Dine Out");
+            if (formData.serviceDelivery) services.push("Delivery");
+            if (formData.serviceTiffin) services.push("Tiffin");
+
+            payload = {
+              ...payload,
+              shopNo: formData.shopNo1,
+              floorLevel: formData.shopNo2,
+              area: formData.area,
+              city: formData.city,
+              landmark: formData.landmark,
+              services: services,
+              cuisines: formData.cuisines,
+              longitude: formData.longitude,
+              latitude: formData.latitude,
+            };
+          }
+
+          // Choose endpoint based on service type
+          const endpoint =
+            serviceType === "tiffin"
+              ? "http://localhost:3000/firm/addTiffin"
+              : "http://localhost:3000/firm/addRestaurant";
+
+          console.log(`Submitting to ${endpoint}:`, payload);
+
+          // Call API to save data
+          const response = await axios.post(endpoint, payload);
+
+          if (response.data.success) {
+            // Store ID for next steps based on service type
+            if (serviceType === "tiffin") {
+              localStorage.setItem("tiffinId", response.data.tiffin.id);
+              setFormData((prev) => ({
+                ...prev,
+                tiffinId: response.data.tiffin.id,
+              }));
+            } else {
+              localStorage.setItem("restaurantId", response.data.restaurant.id);
+              setFormData((prev) => ({
+                ...prev,
+                restaurantId: response.data.restaurant.id,
+              }));
+            }
+
+            // Move to next step
+            setActiveStep((prev) => prev + 1);
+          }
+        }
+        // Step 2: Upload documents
+        else if (activeStep === 1) {
+          // Check if at least one document has been uploaded
+          const requiredDocuments = [
+            "businessRegistrationCertificate",
+            "hygieneCertificate",
+          ];
+          const hasRequiredDocuments = requiredDocuments.some(
+            (docType) => formData[docType + "Path"] // Check if these document paths exist in formData
+          );
+
+          if (!hasRequiredDocuments) {
+            alert(
+              "Please upload at least one document (Business Registration or Hygiene Certificate) before proceeding."
+            );
+            return;
+          }
+
+          // If documents are uploaded, proceed to next step
+          setActiveStep((prev) => prev + 1);
+        }
+        // Step 3: Submit terms & conditions acceptance
+        else if (activeStep === 2) {
+          // Submit completion (terms acceptance)
+          const idField =
+            serviceType === "tiffin" ? "tiffinId" : "restaurantId";
+          const id = formData[idField] || localStorage.getItem(idField);
+
+          if (id) {
+            const endpoint =
+              serviceType === "tiffin"
+                ? "http://localhost:3000/firm/complete-tiffin-registration"
+                : "http://localhost:3000/firm/complete-registration";
+
+            const finalResponse = await axios.post(endpoint, {
+              [idField]: id,
+              termsAccepted: true,
+              serviceType: serviceType,
+            });
+
+            if (finalResponse.data.success) {
+              setShowModal(true);
+              setSubmitted(true);
+              console.log(
+                `Successfully completed ${serviceType} registration!`
+              );
+            }
+          } else {
+            console.error(
+              `${
+                serviceType === "tiffin" ? "Tiffin" : "Restaurant"
+              } ID not found`
+            );
+            alert(
+              `Registration process error: Missing ${
+                serviceType === "tiffin" ? "tiffin" : "restaurant"
+              } ID`
+            );
+          }
+        }
+      } catch (error) {
+        console.error("API Error:", error);
+        alert(
+          "Error during registration: " +
+            (error.response?.data?.message || error.message || "Unknown error")
+        );
+      }
+    }
+  };
+
+  //Function to handleDocumentUpload
+  const handleDocumentUpload = async (documentType, file) => {
+    const idKey = serviceType === "tiffin" ? "tiffinId" : "restaurantId";
+    if (!file || !formData[idKey]) return;
+
+    try {
+      const formDataObj = new FormData();
+      formDataObj.append("document", file);
+      formDataObj.append("documentType", documentType);
+      formDataObj.append(idKey, formData[idKey]);
+      formDataObj.append("serviceType", serviceType);
+
+      const response = await axios.post(
+        "http://localhost:3000/firm/upload-document",
+        formDataObj,
+        { headers: { "Content-Type": "multipart/form-data" } }
+      );
+
+      return response.data.success;
+    } catch (error) {
+      console.error(`Error uploading ${documentType}:`, error);
+      return false;
+    }
+  };
+
+  // Close the success modal
+  const closeModal = () => setShowModal(false);
+
+  // Info for the side panel steps
+  const businessType = serviceType === "tiffin" ? "Tiffin" : "Restaurant";
+  const stepsDetails = [
+    {
+      title: `${businessType} information`,
+      description: "Name, location and contact number",
+    },
+    {
+      title: `${businessType} documents`,
+      description: "Certificate of Registration",
+    },
+    {
+      title: "Partner contract",
+      description: "Agreement and terms",
+    },
+  ];
+
+  // Each index of this array is one step
+  const steps = [
+    <Step1
+      key="step1"
+      formData={formData}
+      handleChange={handleChange}
+      setFormData={setFormData}
+      activeStep={activeStep}
+      serviceType={serviceType}
+    />,
+    <Step3
+      key="step3"
+      formData={formData}
+      handleChange={handleChange}
+      handleFileUpload={handleFileUpload}
+      setFormData={setFormData}
+      handleDocumentUpload={handleDocumentUpload}
+      serviceType={serviceType}
+    />,
+    <Step4
+      key="step4"
+      formData={formData}
+      handleChange={handleChange}
+      activeStep={activeStep}
+      serviceType={serviceType}
+    />,
+  ];
+
+  return (
+    <div className={css.diningContainer}>
+      <div className={css.contentWrapper}>
+        {/* Left side - Step indicator */}
+        <div className={css.registrationCard}>
+          <h2 className="font-bold text-left text-gray-800">
+            Complete your registration
+          </h2>
+          <hr className="p-2 mt-2 my-1 border-t border-gray-300" />
+          <ol className="relative text-gray-600 border-l border-gray-200">
+            {stepsDetails.map((step, index) => {
+              const isDone =
+                activeStep > index || (submitted && index === steps.length - 1);
+              return (
+                <li
+                  key={index}
+                  className={`mb-10 pl-6 ${
+                    isDone ? "font-bold" : "text-gray-600"
+                  }`}
+                >
+                  <span
+                    className={`absolute flex items-center justify-center w-8 h-8 rounded-full -left-4 ring-4 ${
+                      isDone
+                        ? "bg-green-500 ring-white"
+                        : "bg-gray-100 ring-white"
+                    }`}
+                  >
+                    {isDone ? (
+                      <svg
+                        className="w-3.5 h-3.5 text-white"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 16 12"
+                      >
+                        <path
+                          stroke="currentColor"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M1 5.917 5.724 10.5 15 1.5"
+                        />
+                      </svg>
+                    ) : (
+                      <svg
+                        className="w-3.5 h-3.5 text-gray-500"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="currentColor"
+                        viewBox="0 0 18 20"
+                      >
+                        <path d="M16 1h-3.278A1.992 1.992 0 0 0 11 0H7a1.993 1.993 0 0 0-1.722 1H2a2 2 0 0 0-2 2v15a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2Z" />
+                      </svg>
+                    )}
+                  </span>
+                  <h3 className="font-medium text-lg leading-tight">
+                    {step.title}
+                  </h3>
+                  <p className="text-sm">{step.description}</p>
+                </li>
+              );
+            })}
+          </ol>
+        </div>
+
+        {/* Right side - The multi-step form */}
+        <div className={css.formWrapper}>
+          <header className={css.header}>
+            <h1 className="text-xl text-gray-800">
+              {serviceType === "tiffin"
+                ? "Tiffin Information"
+                : "Restaurant Information"}
+            </h1>
+            <p className="text-gray-600">
+              Expand your reach with Zomatos delivery and dining services.
+            </p>
+          </header>
+
+          {/* One overall form wrapping the step components */}
+          <form id="multiStepForm" onSubmit={handleSubmit} className={css.form}>
+            {steps[activeStep]}
+          </form>
+
+          {/* Step Navigation Buttons */}
+          <div className={css.buttonGroup}>
+            {activeStep > 0 && (
+              <button
+                type="button"
+                onClick={handlePrevious}
+                className="px-6 py-2 bg-gray-200 text-gray-700 rounded-md"
+              >
+                Previous
+              </button>
+            )}
+            {activeStep < steps.length - 1 ? (
+              <button
+                type="button"
+                onClick={handleNext}
+                className="px-6 py-2 bg-blue-500 text-white rounded-md"
+              >
+                Next
+              </button>
+            ) : (
+              <button
+                type="submit"
+                className="px-6 py-2 bg-green-500 text-white rounded-md"
+                onClick={onSubmit}
+              >
+                Submit
+              </button>
+            )}
+          </div>
+        </div>
+      </div>
+
+      {/* Success Modal (after final submit) */}
+      {showModal && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+          <div className="bg-white p-6 rounded-md shadow-lg text-center">
+            <h2 className="text-lg font-bold text-gray-800">
+              Registration Complete
+            </h2>
+            <p className="text-gray-600 mt-2">
+              {serviceType === "tiffin"
+                ? "Your tiffin service has been successfully registered!"
+                : "Your restaurant has been successfully registered!"}
+            </p>
+            <button
+              onClick={closeModal}
+              className="mt-4 px-6 py-2 bg-blue-500 text-white rounded-md"
+            >
+              OK
+            </button>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default Dining;

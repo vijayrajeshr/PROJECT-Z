@@ -1,0 +1,89 @@
+.outerDiv {
+    width: 100%;
+    max-width: 1300px;
+    margin: 60px auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.title {
+    font-size: 36px;
+    font-weight: 700;
+    color: #1c1c1c;
+    margin-bottom: 30px;
+    letter-spacing: -1px;
+}
+
+.carouselContainer {
+    position: relative;
+    width: 100%;
+    margin-bottom: 60px;
+}
+
+@media (max-width: 1024px) {
+    .outerDiv {
+        margin: 40px auto;
+    }
+
+    .title {
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 26px;
+        margin-bottom: 20px;
+    }
+
+    .outerDiv {
+        margin: 30px auto;
+        padding: 0 15px;
+    }
+}
+
+/* Custom Slick Dots Styling */
+.carouselContainer :global(.slick-dots) {
+    bottom: -50px;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    position: absolute;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.carouselContainer :global(.slick-dots li) {
+    margin: 0;
+    width: auto;
+    height: auto;
+    display: flex;
+    align-items: center;
+}
+
+.carouselContainer :global(.slick-dots li button) {
+    width: 30px;
+    height: 5px;
+    padding: 0;
+    border-radius: 10px;
+    background-color: #e0e0e0; /* Inactive bar color */
+    border: none;
+    cursor: pointer;
+    font-size: 0;
+    line-height: 0;
+    transition: all 0.3s ease;
+    display: block;
+    outline: none;
+}
+
+.carouselContainer :global(.slick-dots li button:before) {
+    display: none; /* Hide default slick dots bullet */
+}
+
+.carouselContainer :global(.slick-dots li.slick-active button) {
+    background-color: #ff645a; /* Active bar color (Orange) */
+    width: 60px; /* Make it longer when active just like the image */
+}
