@@ -1,0 +1,208 @@
+[
+  {
+    "status": "active",
+    "featured": true,
+    "title": "Calgary Stampede: The Greatest Outdoor Show on Earth",
+    "tagline": "The world’s largest outdoor rodeo and festival",
+    "description": "A 10-day world-famous rodeo, exhibition, and festival featuring chuckwagon racing, concerts, a parade, and a massive midway.",
+    "category": "festival",
+    "language": "en",
+    "images": [
+      "https://images.pexels.com/photos/52714/stampede-horses-outdoor-activity-52714.jpeg"
+    ],
+    "startAt": "2026-07-03T16:00:00Z",
+    "endAt": "2026-07-13T05:59:59Z",
+    "venue": {
+      "ref": "venue_stampede_park",
+      "snapshot": {
+        "name": "Stampede Park",
+        "address": "1410 Olympic Way SE",
+        "city": "Calgary",
+        "state": "AB",
+        "country": "Canada",
+        "lat": 51.045,
+        "lng": -114.057
+      }
+    },
+    "pricing": {
+      "general": 2500,
+      "vip": 7500,
+      "currency": "cad"
+    },
+    "ticketTypes": [
+      {
+        "id": "stampede_ga",
+        "name": "General Admission",
+        "priceCents": 2500,
+        "currency": "cad",
+        "inventory": 500000,
+        "type": "GA"
+      },
+      {
+        "id": "stampede_vip",
+        "name": "Rodeo VIP",
+        "priceCents": 7500,
+        "currency": "cad",
+        "inventory": 25000,
+        "type": "RESERVED"
+      }
+    ],
+    "metadata": {
+      "isKidsFriendly": true,
+      "isPetFriendly": false,
+      "layout": "Outdoor festival grounds"
+    },
+    "support": {
+      "email": "info@calgarystampede.com"
+    },
+    "organizer": "org_calgary_stampede",
+    "createdAt": "2025-01-01T00:00:00Z",
+    "updatedAt": "2025-01-01T00:00:00Z"
+  },
+
+  {
+    "status": "active",
+    "featured": true,
+    "title": "MGK: Lost Americana Tour",
+    "tagline": "Hip-hop meets alternative rock",
+    "description": "Machine Gun Kelly live in concert blending hip-hop, rock, and alternative sounds.",
+    "category": "concert",
+    "language": "en",
+    "images": [
+      "https://images.pexels.com/photos/349790/musician-country-song-banjo-guitar-349790.jpeg"
+    ],
+    "startAt": "2026-06-14T23:00:00Z",
+    "endAt": "2026-06-15T03:00:00Z",
+    "venue": {
+      "ref": "venue_rbc_amphitheatre",
+      "snapshot": {
+        "name": "RBC Amphitheatre",
+        "city": "Toronto",
+        "state": "ON",
+        "country": "Canada"
+      }
+    },
+    "pricing": {
+      "general": 9500,
+      "vip": 18000,
+      "currency": "cad"
+    },
+    "ticketTypes": [
+      {
+        "id": "mgk_ga",
+        "name": "General Admission",
+        "priceCents": 9500,
+        "currency": "cad",
+        "inventory": 15000,
+        "type": "GA"
+      },
+      {
+        "id": "mgk_vip",
+        "name": "VIP Pit",
+        "priceCents": 18000,
+        "currency": "cad",
+        "inventory": 1200,
+        "type": "RESERVED"
+      }
+    ],
+    "metadata": {
+      "isKidsFriendly": false,
+      "layout": "Indoor arena"
+    },
+    "organizer": "org_live_nation",
+    "createdAt": "2025-01-01T00:00:00Z",
+    "updatedAt": "2025-01-01T00:00:00Z"
+  },
+
+  {
+    "status": "active",
+    "featured": true,
+    "title": "Great Outdoors Comedy Festival",
+    "tagline": "Stand-up comedy under open skies",
+    "description": "A multi-day outdoor stand-up comedy festival featuring global headliners and Canadian talent.",
+    "category": "standup",
+    "language": "en",
+    "images": [
+      "https://images.pexels.com/photos/2907679/pexels-photo-2907679.jpeg"
+    ],
+    "startAt": "2026-07-17T23:00:00Z",
+    "endAt": "2026-09-14T05:59:59Z",
+    "venue": {
+      "ref": "venue_winnipeg_park",
+      "snapshot": {
+        "name": "Downtown Green Park",
+        "city": "Winnipeg",
+        "state": "MB",
+        "country": "Canada"
+      }
+    },
+    "pricing": {
+      "general": 6500,
+      "vip": 12000,
+      "currency": "cad"
+    },
+    "ticketTypes": [
+      {
+        "id": "comedy_ga",
+        "name": "General Lawn",
+        "priceCents": 6500,
+        "currency": "cad",
+        "inventory": 20000,
+        "type": "GA"
+      }
+    ],
+    "metadata": {
+      "isKidsFriendly": false,
+      "layout": "Outdoor lawn seating"
+    },
+    "organizer": "org_gocf",
+    "createdAt": "2025-01-01T00:00:00Z",
+    "updatedAt": "2025-01-01T00:00:00Z"
+  },
+
+  {
+    "status": "upcoming",
+    "featured": true,
+    "title": "Chef’s Table Workshop",
+    "tagline": "Hands-on culinary techniques from award-winning chefs",
+    "description": "An intimate cooking workshop with Michelin-recognised chefs including tasting flights and curated take-home kits.",
+    "category": "workshop",
+    "language": "en",
+    "images": [
+      "https://images.pexels.com/photos/8949501/pexels-photo-8949501.jpeg"
+    ],
+    "startAt": "2025-04-05T14:00:00Z",
+    "endAt": "2025-04-05T18:00:00Z",
+    "venue": {
+      "ref": "venue_grand_hotel",
+      "snapshot": {
+        "name": "Grand Hotel Culinary Studio",
+        "city": "Vancouver",
+        "state": "BC",
+        "country": "Canada"
+      }
+    },
+    "pricing": {
+      "general": 1299,
+      "vip": 1899,
+      "currency": "cad"
+    },
+    "ticketTypes": [
+      {
+        "id": "chef_table_pass",
+        "name": "Workshop Pass",
+        "priceCents": 1299,
+        "currency": "cad",
+        "inventory": 80,
+        "type": "RESERVED"
+      }
+    ],
+    "metadata": {
+      "isKidsFriendly": false,
+      "layout": "Studio kitchen"
+    },
+    "organizer": "org_olcademy",
+    "createdAt": "2024-12-01T00:00:00Z",
+    "updatedAt": "2024-12-01T00:00:00Z"
+  }
+]
