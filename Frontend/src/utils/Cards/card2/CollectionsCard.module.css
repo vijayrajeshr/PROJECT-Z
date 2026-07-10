@@ -1,0 +1,72 @@
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 260px;
+  width: 100%;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+}
+
+.cardImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(75%);
+  transition: filter 0.3s ease-in-out;
+}
+
+.card:hover .cardImg {
+  filter: brightness(60%);
+}
+
+.details {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  color: white;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 8px 12px;
+  border-radius: 4px;
+}
+
+.title {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.placesTxt {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.9rem;
+  color: #fff;
+}
+
+.rightArrowBox {
+  display: flex;
+  align-items: center;
+}
+
+.rightArrow {
+  width: 12px;
+  height: 12px;
+  filter: invert(100%);
+  margin-left: 5px;
+  transition: transform 0.3s ease;
+}
+
+.card:hover .rightArrow {
+  transform: translateX(3px);
+}

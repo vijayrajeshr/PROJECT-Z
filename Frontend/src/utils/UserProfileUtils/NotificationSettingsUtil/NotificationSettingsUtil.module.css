@@ -1,0 +1,70 @@
+.settingRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.settingInfo {
+    flex: 1;
+}
+
+.settingTitle {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.settingDescription {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.settingControls {
+    display: flex;
+    justify-content: space-between;
+    width: 170px;
+}
+
+.switchLabel {
+    display: inline-block;
+    width: 40px;
+    height: 22px;
+    position: relative;
+}
+
+.toggleInput {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.toggleSlider {
+    position: absolute;
+    cursor: pointer;
+    background-color: #ccc;
+    border-radius: 22px;
+    width: 100%;
+    height: 100%;
+    transition: 0.3s;
+}
+
+.toggleInput:checked + .toggleSlider {
+    background-color: #02757A;
+}
+
+.toggleSlider::before {
+    position: absolute;
+    content: "";
+    width: 16px;
+    height: 16px;
+    background-color: white;
+    transition: 0.3s;
+    border-radius: 50%;
+    left: 3px;
+    bottom: 3px;
+}
+
+.toggleInput:checked + .toggleSlider::before {
+    transform: translateX(18px);
+}

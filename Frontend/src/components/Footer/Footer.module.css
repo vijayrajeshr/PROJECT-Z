@@ -1,0 +1,297 @@
+.footer {
+  width: 100%;
+  background-color: #E6F1F2;
+  padding: 2rem 4rem;
+  box-sizing: border-box;
+  /* overflow-x: hidden; */
+  margin-top: -90px;
+}
+
+.innerFooter {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: -60px;
+}
+
+/* Section 1: Logo and Filters */
+.sec1 {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logoBox {
+  width: 150px;
+  height: 30px;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* Section 2: Footer Links */
+.sec2 {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  /* was space-between; center is better for responsiveness */
+  align-items: flex-start;
+  gap: 2rem;
+  box-sizing: border-box;
+}
+
+/* Make titles appear in a single row */
+.boxContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.box {
+  flex: 1;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.boxTtl {
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  white-space: nowrap;
+}
+
+/* Footer Links */
+.boxOpt {
+  text-decoration: none;
+  color: rgb(105, 105, 105);
+  font-size: 0.9rem;
+  transition: color 0.3s ease-in-out;
+}
+
+.boxOpt:hover {
+  color: rgb(239, 79, 95);
+}
+
+/* Social Links Section */
+.box5 {
+  flex: 1;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.socialImgs {
+  display: flex;
+  gap: 15px;
+  justify-content: flex-start;
+}
+
+.socialImgAnchore {
+  text-decoration: none;
+}
+
+.socialImg {
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+
+/* App Store Links */
+.appContainer {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-start;
+  margin-top: 10px;
+}
+
+.app {
+  width: 120px;
+  height: 38px;
+  border-radius: 5px;
+}
+
+.appImg {
+  width: 100%;
+  height: 2.3rem;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* Section 3: Terms & Policies */
+.breakLine {
+  width: 100%;
+  border-top: 1px solid rgb(207, 207, 207);
+}
+
+.sec3 {
+  color: rgb(79, 79, 79);
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media all and (max-width: 800px) {
+  .sec1 {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .boxContainer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .socialImgs {
+    justify-content: center;
+  }
+
+  .appContainer {
+    justify-content: center;
+  }
+}
+
+@media all and (max-width: 550px) {
+  .footer {
+    padding: 1rem 2rem;
+    text-align: center;
+  }
+}
+
+@media all and (max-width: 350px) {
+  .footer {
+    padding: 1rem;
+  }
+
+  .filters {
+    margin-top: 1rem;
+  }
+}
+
+/* Fix for 1024px and below */
+@media (max-width: 1022px) {
+  .sec1 {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .filters {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .sec2 {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    padding: 0 1rem;
+  }
+
+  .box {
+    margin-left: 0;
+    align-items: center;
+    text-align: center;
+  }
+
+  .box5 {
+    min-width: 40%;
+    max-width: 45%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.5rem;
+  }
+
+  .socialImgs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    padding: 0.1rem 0;
+  }
+
+  .socialImg {
+    width: 28px;
+    height: 28px;
+  }
+
+  .appContainer,
+  .app {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+}
+
+/* Fix for 768px and smaller */
+@media (max-width: 766px) {
+  .box {
+    min-width: 80%;
+  }
+
+  .footer {
+    padding: 1.5rem;
+  }
+
+  .app {
+    width: 45%;
+  }
+}
+
+@media all and (max-width: 800px) {
+  .sec1 {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .boxContainer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .socialImgs {
+    justify-content: center;
+  }
+
+  .appContainer {
+    justify-content: center;
+  }
+}
+
+/* Fix for 480px and smaller */
+@media (max-width: 480px) {
+  .filters {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .box {
+    min-width: 100%;
+  }
+
+  .app {
+    width: 100%;
+  }
+}

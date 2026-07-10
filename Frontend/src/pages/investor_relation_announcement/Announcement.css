@@ -1,0 +1,140 @@
+.announcement-container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px 60px;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  color: #222;
+}
+
+.announcement-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 40px;
+  color: #f82929;
+}
+
+/* Layout: sidebar + content */
+.announcement-layout {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+}
+
+/* Sidebar filters */
+.filter-sidebar {
+  min-width: 220px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px;
+  background: #fafafa;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+}
+
+.filter-heading {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 12px;
+  color: #444;
+}
+
+.filter-btn {
+  background-color: white;
+  border: 2px solid #ddd;
+  padding: 10px 16px;
+  border-radius: 8px;
+  text-align: left;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #555;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+  background-color: #f5f5f5;
+}
+
+.filter-btn.active {
+  background-color: #e23744;
+  color: white;
+  border-color: #e23744;
+}
+
+/* Announcements stack vertically */
+.announcement-list {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.announcement-card {
+  background-color: white;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.announcement-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(226, 55, 68, 0.15);
+}
+
+.card-title {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #e23744;
+}
+
+.announcement-date {
+  font-size: 0.85rem;
+  color: #888;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.card-description {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #333;
+}
+
+/* No results */
+.no-results {
+  font-style: italic;
+  color: #888;
+  font-size: 1rem;
+  padding: 20px;
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+  .announcement-layout {
+    flex-direction: column;
+  }
+
+  .filter-sidebar {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px;
+    border: none;
+    background: none;
+    box-shadow: none;
+  }
+
+  .filter-heading {
+    display: none;
+  }
+
+  .filter-btn {
+    flex: 1;
+    text-align: center;
+  }
+}

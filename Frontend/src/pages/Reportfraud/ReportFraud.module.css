@@ -1,0 +1,215 @@
+/* :root {
+  --primary-color: #0056d2;
+  --secondary-color: #ff7e5f;
+  --font-family: "Roboto", Arial, sans-serif;
+  --text-color: #333;
+  --error-color: red;
+  --success-bg: #e6f7ff;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: var(--font-family);
+  color: var(--text-color);
+}
+
+.title {
+  font-size: 2rem;
+  text-align: center;
+  color: black;
+  margin-bottom: 10px;
+}
+
+.description {
+  text-align: center;
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.form {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.formGroup {
+  margin-bottom: 15px;
+}
+
+label {
+  font-size: 1rem;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.input,
+.textarea,
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.input:focus,
+.textarea:focus,
+select:focus {
+  border-color: var(--primary-color);
+  outline: none;
+}
+
+.errorBorder {
+  border-color: var(--error-color);
+}
+
+.error {
+  color: var(--error-color);
+  font-size: 0.9rem;
+  margin-top: 5px;
+}
+
+.submitButton {
+  width: 100%;
+  padding: 12px;
+  background: var(--secondary-color);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submitButton:hover {
+  background: #ff9e7b;
+}
+
+.successMessage {
+  text-align: center;
+  background: var(--success-bg);
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.resetButton {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.resetButton:hover {
+  background: #0042a6;
+} */
+
+.reportHeader {
+  width: 100%;
+  height: 100%;
+  box-shadow: rgb(232, 232, 232) 0px -0.5px 0px 0px inset;
+  box-sizing: border-box;
+}
+
+.herotitle {
+  display: flex;
+  width: 50%;
+  height: 11vh;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 45vw;
+}
+
+.herotitle img {
+  width: 3vw;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 20vw;
+}
+.herotitle h2 {
+  font-size: 2.5vw;
+  font-weight: bold;
+  font-family: Okra, Helvetica, sans-serif;
+}
+
+.profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1vw;
+}
+
+.profile h2 {
+  font-size: 1vw;
+}
+
+.herored {
+  width: 100%;
+  height: 40vh;
+  background-color: rgb(239, 79, 95);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.herored h2 {
+  font-size: 3vw;
+  color: white;
+}
+
+.back {
+  width: 100%;
+  height: 5vh;
+}
+
+.back h2 {
+  font-size: 1.3vw;
+  margin-left: 10%;
+  color: rgb(239, 79, 95);
+  font-weight: 500;
+  margin-top: 1vw;
+}
+
+.container {
+  width: 80%;
+  height: 100%;
+  margin-left: 10%;
+  display: flex;
+}
+
+.leftContent {
+  width: 50%;
+  height: 100%;
+}
+.rightContent {
+  width: 50%;
+  height: 100%;
+}
+
+.disclamer {
+  width: 90%;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 2vw;
+}
+.disclamer h2 {
+  font-size: 2vw;
+  font-weight: 500;
+  font-family: Okra, Helvetica, sans-serif;
+}
+.disclamer p {
+  color: #656464;
+}

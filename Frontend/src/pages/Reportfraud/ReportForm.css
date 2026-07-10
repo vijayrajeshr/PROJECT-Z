@@ -1,0 +1,57 @@
+.report-form {
+  max-width: 79vw;
+  margin: auto;
+  padding: 2vw 2vw 2vw 0;
+  font-family: "Arial", sans-serif;
+  margin-bottom: 5rem;
+}
+
+.report-form input,
+.report-form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  background: #f8f8f8;
+  outline: none;
+  transition: border 0.3s ease-in-out;
+}
+
+.report-form input:focus,
+.report-form textarea:focus {
+  border-color: rgb(239, 79, 95);
+}
+
+.report-form input::placeholder,
+.report-form textarea::placeholder {
+  color: #aaa;
+  font-size: 14px;
+}
+
+.report-form textarea {
+  resize: vertical;
+  height: 100px;
+}
+
+.report-form button {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  color: white;
+
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.report-form button:hover {
+  background: rgb(239, 79, 95);
+}
+
+.para p {
+  font-size: 0.9vw;
+  padding: 1vw;
+}

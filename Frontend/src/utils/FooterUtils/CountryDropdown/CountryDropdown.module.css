@@ -1,0 +1,44 @@
+.region-selector {
+  position: relative;
+  display: inline-block;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f0f0f0;
+  cursor: pointer;
+  font-size: 16px;
+  gap: 8px;
+}
+
+/* Dropdown opens above the button */
+.dropdown {
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  margin-bottom: 8px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 120px;
+  z-index: 100;
+}
+
+.country-item {
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  background-color: #ffffff;
+}
+
+.downArrow {
+  width: 20px;
+  transition-duration: 0.2s;
+}

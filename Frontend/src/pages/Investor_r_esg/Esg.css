@@ -1,0 +1,122 @@
+.esg-container {
+  max-width: 100%;
+  margin: 0 auto;
+  /* padding: 40px 20px; */
+  padding:40px;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #ffffff;
+  color: #333;
+}
+
+.esg-title {
+  font-size: 2.5rem;
+  font-weight: 760;
+  
+  text-align: center;
+  margin-bottom: 20px;
+  color: #000000;
+}
+
+.esg-description {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 40px;
+  color: #000000;
+}
+
+.esg-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+}
+
+/* Horizontal styling */
+.esg-card.horizontal {
+  display: flex;
+  flex-direction: row;
+  color:white;
+  background-color: #444242;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+  border-left: 6px solid #e23744;
+  transition: transform 0.3s;
+}
+
+.esg-card.horizontal:hover {
+  transform: translateY(-5px);
+}
+
+.esg-heading {
+  flex: 1;
+  padding: 25px 20px;
+  background-color: #f1f1f1;
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.esg-heading h2 {
+  font-size: 1.4rem;
+  color: #000000;
+  margin: 0;
+  text-align: center;
+}
+
+.esg-content {
+  flex: 3;
+  padding: 25px 30px;
+}
+
+.esg-content ul {
+  padding-left: 20px;
+  list-style-type: disc;
+}
+
+.esg-content li {
+  margin-bottom: 14px;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.esg-content li strong {
+  display: block;
+  margin-bottom: 4px;
+  font-weight: 600;
+  color: #fdf6f6;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .esg-card.horizontal {
+    flex-direction: column;
+  }
+
+  .esg-heading,
+  .esg-content {
+    border-radius: 0;
+    padding: 20px;
+  }
+
+  .esg-heading {
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+  }
+
+  .esg-content {
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+  }
+
+  .esg-heading h2 {
+    font-size: 1.2rem;
+  }
+}
+.f{
+  padding-top: 70px;
+  width:100%;
+}

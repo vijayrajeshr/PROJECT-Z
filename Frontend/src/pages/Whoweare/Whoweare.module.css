@@ -1,0 +1,377 @@
+/* Whoweare.module.css
+.container {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+.heroSection {
+  text-align: center;
+  padding: 50px 0;
+  background: #f5f5f5;
+}
+
+.heroText h1 {
+  font-size: 2.5em;
+  color: #333;
+}
+
+.heroText p {
+  font-size: 1.2em;
+  color: #777;
+}
+
+.missionSection, .historySection, .valuesSection, .teamSection {
+  margin: 30px 0;
+}
+
+.missionSection h2, .historySection h2, .valuesSection h2, .teamSection h2 {
+  font-size: 2em;
+  margin-bottom: 15px;
+}
+
+.missionSection p {
+  font-size: 1.2em;
+  color: #555;
+}
+
+.filterDropdown {
+  padding: 10px;
+  margin: 15px 0;
+}
+
+.historyGrid {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.historyItem {
+  width: calc(33.333% - 20px);
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  text-align: center;
+  background: #fafafa;
+}
+
+.valuesCarousel {
+  display: flex;
+  gap: 20px;
+}
+
+.valueItem {
+  flex: 1;
+  text-align: center;
+}
+
+.teamGrid {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.teamMember {
+  width: calc(33.333% - 20px);
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+  background: #fafafa;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modalContent {
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.closeModal {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background: red;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.activeValue {
+  border: 2px solid blue;
+  background-color: #eef;
+}
+
+.teamMember:hover,
+.historyItem:hover {
+  background-color: #f0f0f0;
+  cursor: pointer;
+} */
+
+.who_we_are {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.topSection {
+  width: 100%;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: absolute;
+  z-index: 99;
+  color: white;
+  background: rgba(0, 0, 0, 0.4); /* Fixed background opacity */
+}
+
+.navigationLinks {
+  display: flex;
+  gap: 3vw;
+  font-size: 1.25rem;
+}
+
+.topSection h4 {
+  font-size: 2vw;
+  font-weight: 600;
+  color: white;
+}
+
+.imageSec {
+  width: 100%;
+  height: 80vh;
+  position: relative;
+}
+
+.imageSec::before {
+  content: "";
+  position: absolute;
+  left: 0; /* Change to `right: 0;` for the other side */
+  width: 100%; /* Adjust width as needed */
+  height: 100%;
+  background-color: rgb(25, 23, 23);
+  opacity: 0.5;
+}
+
+.imageSec img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+.better {
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  z-index: 99;
+  color: white;
+  top: 40vh;
+  /* left:25vw; */
+}
+.better h3 {
+  font-size: 3.5vw;
+  color: white;
+}
+.better p {
+  left: 70%;
+}
+.aaaoBox {
+  width: 80%;
+  margin-left: 10vw;
+  height: 110vh;
+  margin-top: 15vh;
+  position: relative;
+}
+.aaaoBox img {
+  width: 100%;
+  height: 80vh;
+
+  border-radius: 2%;
+}
+
+.buttonMovements {
+  font-size: 2vw;
+  position: absolute;
+  z-index: 999;
+  display: flex;
+  justify-content: space-between;
+  /* gap: 75.1vw; */
+  width: 100%;
+  top: 10%;
+  font-size: 3vw;
+}
+.leftClick {
+  color: white;
+}
+.aaaoMove {
+  display: flex;
+  gap: 2vw;
+  margin-top: 2vh;
+}
+.round {
+  padding: 0.8vw;
+  background-color: rgb(235, 81, 81);
+  border-radius: 20px;
+  padding: 0.5vw 2vw;
+}
+.round p {
+  color: white;
+  font-size: 1vw;
+  font-weight: 600;
+}
+
+.inActive {
+  padding: 0.8vw;
+  border: 1px solid black;
+  border-radius: 20px;
+  padding: 0.5vw 2vw;
+}
+
+.aaaoTitle {
+  margin-top: 3vh;
+}
+
+.aaaoTitle h2 {
+  font-size: 2.2vw;
+  font-family: sans-serif;
+}
+
+.aaaoTitle span {
+  color: rgb(235, 81, 81);
+}
+.container {
+  width: 80%;
+  /* height: 53vh; */
+  margin-left: 10vw;
+  display: flex;
+  justify-content: space-between;
+  /* background-color: royalblue; */
+}
+.leftContainer {
+  width: 50%;
+}
+.rightContainer {
+  padding: 4vw;
+  width: 50%;
+}
+
+.leftContainer h2 {
+  font-size: 2vw;
+  font-weight: 600;
+}
+.leftContainer span {
+  border-bottom: 4px solid red;
+}
+.rightContainer img {
+  border-radius: 10px;
+}
+
+.fromBlog {
+  width: 80%;
+  /* height: 10vh; */
+  margin-left: 10vw;
+  font-weight: 600;
+}
+
+.fromBlog h1 {
+  font-size: 2vw;
+  font-weight: 600;
+}
+
+.blogs {
+  width: 80%;
+  height: 50vh;
+  margin-left: 10vw;
+  margin-top: 3.5vh;
+  display: flex;
+  gap: 2vw;
+  justify-content: space-between;
+}
+.box {
+  width: 33.33%;
+  height: 60%;
+  cursor: pointer;
+}
+.box img {
+  width: 100%;
+  height: 100%;
+  border-radius: 2%;
+  object-fit: cover;
+}
+.box p {
+  /* color: black; */
+  margin: 0.5vh 0;
+  font-size: small;
+  color: gray;
+}
+.box h2 {
+  font-size: 1.4vw;
+  font-weight: 500;
+  margin: 0.5vh 0;
+}
+
+.lifeAtZomato {
+  width: 80%;
+  margin-left: 10vw;
+  height: 80vh;
+  margin-top: 6vh;
+}
+.container1 {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  gap: 1vw;
+  margin-bottom: 1vh;
+}
+.container1 .leftc1 {
+  width: 65%;
+  height: 100%;
+}
+
+.container1 .rightc1 {
+  width: 35%;
+  height: 100%;
+}
+.rc1 {
+  width: 100%;
+  height: 50%;
+}
+.rc2 {
+  margin-top: 1vh;
+  width: 100%;
+  height: 50%;
+}
+.lifeAtZomato img {
+  width: 100%;
+  height: 100%;
+  border-radius: 2%;
+  object-fit: cover;
+  overflow: hidden;
+  object-position: center;
+}
+.lifeAtZomato h1 {
+  font-size: 2vw;
+  font-weight: 600;
+  margin-bottom: 5vh;
+}
+
+.gapfor {
+  width: 100%;
+  height: 30vh;
+}

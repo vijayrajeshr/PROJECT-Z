@@ -1,0 +1,315 @@
+/* Dining.module.css */
+
+/* ------------------------------ */
+/* Main Container & Layout        */
+/* ------------------------------ */
+.diningContainer {
+  background-color: #f9f9f9;
+  min-height: 100vh;
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.contentWrapper {
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+/* Left Side - Steps Panel */
+.registrationCard {
+  flex: 1;
+  background: #f8f8f8;
+  padding: 20px 20px 40px;
+  border-right: 1px solid #ddd;
+}
+
+.registrationCard h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  text-align: left;
+  font-weight: bold;
+  color: #333;
+}
+
+.registrationCard ol {
+  margin: 0;
+  padding: 0 0 0 10px;
+}
+
+.registrationCard li {
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.registrationCard li h3 {
+  font-size: 16px;
+  margin-bottom: 4px;
+  color: #333;
+}
+
+/* Right Side - Form Wrapper */
+.formWrapper {
+  flex: 2;
+  padding: 25px 30px;
+  display: flex;
+  flex-direction: column;
+  background-color: #f9f9f9;
+}
+
+.header h1 {
+  font-size: 30px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 6px;
+}
+
+.header p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+/* Form styling */
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Form Groups & Label/Input */
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+/* Card-like style for the first input group (optional) */
+.formGroup:nth-of-type(1) {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.formGroup input[type="text"],
+.formGroup input[type="email"],
+.formGroup input[type="tel"] {
+  padding: 12px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.formGroup input[type="text"]:focus,
+.formGroup input[type="email"]:focus,
+.formGroup input[type="tel"]:focus {
+  border-color: blue;
+}
+
+/* Phone Number Wrapper */
+.phoneWrapper {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.flagWrapper {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid #ccc;
+  border-radius: 5px 0 0 5px;
+  background-color: #fff;
+  padding: 0 8px;
+}
+
+.flag {
+  width: 20px;
+  height: 14px;
+  border-radius: 2px;
+}
+
+.countrySelect {
+  border: none;
+  outline: none;
+  font-size: 14px;
+  background: transparent;
+  cursor: pointer;
+}
+
+.phoneWrapper input {
+  border: 1px solid #ccc;
+  border-left: none;
+  border-radius: 0 5px 5px 0;
+  flex: 1;
+}
+
+/* Checkbox Container */
+.checkboxContainer {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Horizontal Group for inline items */
+.horizontalGroup {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: center;
+}
+
+/* Additional Utility Classes */
+.row {
+  display: flex;
+  gap: 20px;
+}
+
+.half {
+  flex: 1;
+}
+
+/* Search Bar Group Override */
+.searchBarGroup {
+  margin: 20px 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  background-color: transparent !important;
+}
+
+/* Button Group */
+.buttonGroup {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.buttonGroup button {
+  padding: 12px 25px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+}
+
+.buttonGroup button[type="button"] {
+  background-color: #b9b0b0;
+  color:black;
+}
+
+.buttonGroup button[type="button"]:hover {
+  background-color: #e0e0e0;
+}
+
+.buttonGroup button[type="submit"] {
+  background-color: #1747c4;
+  color: #fff;
+}
+
+.buttonGroup button[type="submit"]:hover {
+  background-color: #103ab2;
+}
+
+/* Add Cuisine Button Styles */
+.addCuisineButton {
+  border: 1px solid #ccc;
+  background-color: blue;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.addCuisineButton:hover {
+  background-color: #003d99;
+}
+
+/* Modal Styles */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modalContainer {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 350px;
+  max-width: 90%;
+}
+
+.clearButton {
+  background: none;
+  border: none;
+  color: blue;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.okButton {
+  background-color: blue;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .contentWrapper {
+    flex-direction: column;
+    border-radius: 0;
+  }
+
+  .registrationCard {
+    border-right: none;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 20px;
+  }
+
+  .formWrapper {
+    padding: 15px;
+  }
+
+  .buttonGroup {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .buttonGroup button {
+    width: 100%;
+  }
+
+  .formGroup input[type="text"],
+  .formGroup input[type="email"],
+  .formGroup input[type="tel"] {
+    max-width: 100%;
+  }
+
+  .row {
+    flex-direction: column;
+    gap: 0;
+  }
+}

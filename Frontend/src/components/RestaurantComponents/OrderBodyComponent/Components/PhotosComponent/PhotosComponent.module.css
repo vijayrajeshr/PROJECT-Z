@@ -1,0 +1,149 @@
+:root {
+  /* Main palette */
+  --color-primary: #006C6A;            /* Primary teal */
+  --color-primary-light: #C1DCDC;      /* Primary soft */
+
+  --color-light: #F8FCFD;              /* Light */
+  --color-background: #E8F1F1;         /* Background */
+  --color-background-light: #F2F8F8;   /* Light-2 */
+
+  --color-title-text: #1C1C1C;         /* Headings */
+  --color-text: #3E3E3E;               /* Body text */
+  --color-text-tertiary: #5A5A5A;      /* Small text */
+
+  --color-border: #D3D3D3;             /* Border/Divider */
+
+  --color-success: #008B2F;            /* Success/Rating */
+
+  /* Button specific (old “red” button) — make it teal now */
+  --color-red: var(--color-primary);   /* Use primary teal */
+  --color-red-dark: #005856;           /* Darker teal on hover */
+}
+
+
+.outerDiv {
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+   background-color:white;
+}
+
+.ttl {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--color-title-text);
+  margin: 1rem 0;
+  text-align: left;
+  margin-top: -30px;
+}
+
+.btns {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* Gallery grid - responsive */
+.photoCards {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 0.75rem;
+}
+
+.imgCard {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Active button styles */
+.activeButton {
+  border: 2px solid var(--color-primary);
+  background-color: var(--color-primary); /* teal background */
+  color: var(--color-light);              /* white text */
+}
+
+.activeButton:hover {
+  background-color: var(--color-red-dark); /* darker teal on hover */
+}
+
+
+
+/* Base button styles */
+.btn {
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+/* RedButton specific styles */
+.redButton {
+  background-color: var(--color-red);
+  color: white;
+  border: none;
+}
+
+.redButton:hover {
+  background-color: var(--color-red-dark);
+}
+
+.whiteButton {
+  background-color: white;
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+}
+
+.whiteButton:hover {
+  background-color: var(--color-background-light);
+}
+
+
+/* ✅ Media queries for better responsiveness */
+@media (max-width: 768px) {
+  .ttl {
+    font-size: 1.3rem;
+    text-align: center;
+  }
+
+  .btns {
+    justify-content: center;
+  }
+
+  .photoCards {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 0.5rem;
+  }
+
+  .imgCard {
+    height: 160px;
+  }
+}
+
+@media (max-width: 480px) {
+  .ttl {
+    font-size: 1.1rem;
+    text-align: center;
+  }
+
+  .btns {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .photoCards {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 0.4rem;
+  }
+
+  .imgCard {
+    height: 140px;
+  }
+}

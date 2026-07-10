@@ -1,0 +1,45 @@
+/* Ensures the body takes full height and removes scrolling */
+.bodySize {
+    width: 100%;
+    min-height: 100vh; /* Makes sure the body takes at least the full viewport height */
+    display: flex;
+    flex-direction: column; /* Align the content vertically */
+    justify-content: flex-start; /* Align items at the top of the screen */
+    overflow: hidden; /* Prevent scrolling */
+  }
+  
+  .chooseTypeCards {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px; /* Adds spacing between cards */
+    overflow: hidden; /* Prevent scroll if items overflow */
+  }
+  
+  .chooseTypeCards .card {
+    width: 400px;  /* Increased width for rectangular shape */
+    height: 250px; /* Adjusted height for a balanced rectangle */
+    padding: 20px; /* Adds padding for better spacing */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Shadow for better visibility */
+    border-radius: 10px; /* Slight rounding of corners */
+    background-color: #fff; /* White background */
+    transition: transform 0.3s ease-in-out;
+    overflow: hidden; /* Prevent overflow inside the card */
+  }
+  
+  .chooseTypeCards .card:hover {
+    transform: scale(1.05); /* Slight enlargement on hover */
+  }
+  
+  @media all and (max-width: 768px) {
+    .chooseTypeCards {
+        width: 90%;
+    }
+    
+    .chooseTypeCards .card {
+        width: 200px; /* Adjust width for smaller screens */
+        height: 200px; /* Maintain aspect ratio */
+    }
+  }
+  

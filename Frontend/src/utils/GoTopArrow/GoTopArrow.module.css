@@ -1,0 +1,48 @@
+.outerDiv {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 45px;
+    height: 45px;
+    background-color: #ef4f5f;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1000;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+}
+
+.outerDiv.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.outerDiv.hidden {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+}
+
+.outerDiv:hover {
+    background-color: #d13e4d;
+    transform: scale(1.1);
+}
+
+.innerDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.topArrow {
+    width: 14px;
+    height: 14px;
+    filter: invert(1);
+}

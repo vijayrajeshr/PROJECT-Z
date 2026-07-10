@@ -1,0 +1,27 @@
+.btn {
+    padding: 7px 10px;
+    background-color: var(--bg-white);
+    border-radius: 5px;
+    border: var(--brd2);
+    margin: 0.5rem;
+    display: flex;
+    text-align: center;
+    cursor: pointer;
+    font-weight: 400;
+    color: var(--color-p5-text);
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .btn:hover {
+    background-color: var(--bg-f8f8f8);
+  }
+  
+  .count {
+    margin: 0 5px;
+  }
+  
+  .activeButton {
+    border: 2px solid var(--color-primary);
+    background-color: var(--color-primary-light);
+    color: var(--color-primary);
+  }

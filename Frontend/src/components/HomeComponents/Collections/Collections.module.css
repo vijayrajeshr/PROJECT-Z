@@ -1,0 +1,16 @@
+/* Hide scrollbar */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Mobile adjustments */
+@media (max-width: 480px) {
+  .cardWrapper {
+    width: 100% !important;
+    margin: 0 auto;
+  }
+} 

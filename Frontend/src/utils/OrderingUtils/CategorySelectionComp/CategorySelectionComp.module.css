@@ -1,0 +1,170 @@
+/* .outerDiv {
+    margin: 5px;
+    width: 200px;
+    height: 70px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.outerDivActive {
+    margin: 5px;
+    width: 200px;
+    height: 70px;
+    cursor: pointer;
+    border-bottom: 3px solid var(--color-pinky);
+}
+
+.innerDiv {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imgBox {
+    width: 40%;
+    height: 60%;
+    margin: 0px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.img {
+    width: 50%;
+    height: 80%;
+    object-fit: fill;
+}
+
+.txtBox {
+    width: 70%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.titleActive {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--color-pinky);
+}
+
+.title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--color-title-text);
+} */
+
+ /* Define CSS Variables for consistency and easy theming */
+:root {
+  --primary-accent-color: #02757A; /* Example Zomato-like red */
+  --inactive-tab-color: #666; /* Darker gray for inactive text */
+  --active-tab-text-color: #333;
+  --tab-hover-bg: #f5f5f5; /* Light background on hover */
+  --tab-border-color: #ddd; /* Light border for inactive tabs */
+}
+
+.tabItem {
+  display: flex;
+  flex-direction: column; /* Stack icon and title vertically */
+  align-items: center;
+  justify-content: center; /* Center content vertically too */
+  padding: 10px 15px; /* Adjust padding for tab-like feel */
+  cursor: pointer;
+  border-bottom: 3px solid transparent; /* Placeholder for active underline */
+  transition: all 0.2s ease-in-out; /* Smooth transitions */
+  min-width: 120px; /* Ensure consistent width for tabs */
+  height: 80px; /* Fixed height for tab items */
+  box-sizing: border-box; /* Include padding and border in sizing */
+  flex-shrink: 0; /* Prevent shrinking in a flex container */
+  background-color: transparent; /* No background for inactive tabs */
+}
+
+/* Active tab styling */
+.tabItemActive {
+  border-bottom-color: #02757A; /* Bold underline for active tab */
+}
+
+/* Hover effect for all tabs */
+.tabItem:hover {
+  background-color: var(--tab-hover-bg); /* Light background on hover */
+}
+
+/* Icon container for consistent sizing and alignment */
+.tabIconContainer {
+  width: 40px; /* Consistent size for icon container */
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5px; /* Space between icon and title */
+}
+
+.tabIcon {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  filter: grayscale(100%); /* Desaturate inactive icons */
+  opacity: 0.7;
+  transition: all 0.2s ease-in-out;
+}
+
+.tabIconActive {
+  filter: grayscale(0%); /* Full color for active icon */
+  opacity: 1;
+  transform: scale(1.1); /* Slightly larger icon when active */
+}
+
+/* Title styling */
+.tabTitleContainer {
+  text-align: center;
+}
+
+.tabTitle {
+  font-size: 1em;
+  font-weight: 500;
+  color: var(--inactive-tab-color);
+  white-space: nowrap; /* Prevent wrapping */
+  overflow: hidden;
+  text-overflow: ellipsis; /* Handle long titles */
+  transition: all 0.2s ease-in-out;
+}
+
+.tabTitleActive {
+  font-weight: 600; /* Slightly bolder for active title */
+  color: var(--active-tab-text-color); /* Darker, more prominent text */
+}
+
+/* --- Container for multiple tabs (e.g., in a parent component) --- */
+/* You would apply this to the parent div that wraps all CategorySelectionComp instances */
+.tabsContainer {
+  display: flex; /* Arrange tabs horizontally */
+  justify-content: flex-start; /* Align tabs to the start */
+  border-bottom: 1px solid var(--tab-border-color); /* Common bottom border for the tab bar */
+  overflow-x: auto; /* Allow horizontal scrolling if many tabs */
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+  gap: 5px; /* Small gap between tabs, optional */
+  list-style: none; /* Remove list styling if used in ul/li */
+  padding: 0; /* Remove default padding */
+  margin: 0; /* Remove default margin */
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .tabItem {
+    padding: 8px 12px;
+    min-width: 90px;
+    height: 70px;
+  }
+  .tabIconContainer {
+    width: 35px;
+    height: 35px;
+  }
+  .tabTitle {
+    font-size: 0.9em;
+  }
+}

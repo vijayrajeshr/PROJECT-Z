@@ -1,0 +1,61 @@
+.language-selector {
+  position: relative;
+  display: inline-block;
+}
+
+.language-button {
+  padding: 6px 12px;
+  font-size: 16px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 150px; /* Set a minimum width */
+  width: auto; /* Allow the button to resize based on content */
+  max-width: 100%; /* Prevent the button from growing too wide */
+}
+
+.language-button .selected-language {
+  margin-left: 10px;
+  flex-grow: 1;
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; /* Keep the text on a single line */
+}
+
+.language-button .arrow {
+  margin-left: 10px;
+}
+
+.dropdown {
+  position: absolute;
+  bottom: 100%; /* This makes the dropdown open above the button */
+  left: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  width: 150px;
+  max-height: 300px;
+  overflow-y: auto;
+  z-index: 1000;
+}
+
+.dropdown-item {
+  padding: 10px 15px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.dropdown-item:hover {
+  background-color: #f0f0f0;
+}
+
+.arrowimg {
+  width: 20px;
+  transition-duration: 0.2s;
+}

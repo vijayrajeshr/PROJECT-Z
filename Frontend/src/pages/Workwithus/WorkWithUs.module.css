@@ -1,0 +1,247 @@
+
+
+.bodyForWorkWithUs {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.mainScreen {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  padding: 0.5rem;
+
+  align-items: center;
+  position: absolute;
+  color: white;
+  z-index: 999;
+  background: rgba(0, 0, 0, 0.4); /* Fixed background opacity */
+}
+.mainScreen h1 {
+  font-size: 4vh;
+  font-weight: 700;
+}
+.linkingList {
+  display: flex;
+  gap: 3vw;
+}
+.listenOne {
+  margin-left: 6vw;
+  margin-top: 11vh;
+  position: absolute;
+  color: white;
+  z-index: 999;
+  top: 15vh;
+}
+.listenOne h1 {
+  display: flex;
+  font-size: 4vw;
+  font-weight: 500;
+  line-height: 9vh;
+}
+.listenOne p {
+  font-size: 2vw;
+}
+
+.heroImage {
+  width: 100%;
+  height: 80%;
+}
+
+.heroImage img {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: -1;
+}
+.whatMakeUs {
+  width: 100%;
+  height: 100vh;
+
+  background-color: rgb(236, 222, 224);
+  /* position: relative; */
+}
+.whatMakeUs h1 {
+  font-size: 3vw;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 10vh;
+  /* top: 10vh; */
+}
+
+.boxes {
+  width: 70%;
+  height: 80%;
+  /* padding-left: 10vw; */
+  display: flex;
+  margin-left: 18rem;
+  margin-right: 15rem;
+  justify-content: center;
+  align-items: center;
+  /* padding-top: 5vh; */
+
+  gap: 2vw;
+}
+
+.boxes .box {
+  width: 33%;
+  height: 50vh;
+  background-color: white;
+  border-radius: 7%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 2vw;
+}
+
+.box h2 {
+  font-size: 3.5vw;
+  border-bottom: 1px solid black;
+  line-height: 8vh;
+  padding-bottom: 2vh;
+}
+
+.box .image {
+  width: 100%;
+  height: 20%;
+  padding-left: 180px;
+}
+.image img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+.employeeBenefits {
+  width: 100%;
+  /* height: 10vh; */
+  margin-bottom: 5rem;
+}
+
+.employeeBenefits h2 {
+  font-size: 3vw;
+  font-weight: 600;
+  padding-left: 15rem;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+
+  /* padding: 20vh 50vh 10vh 50vh; */
+}
+.buildTogether h1 {
+  font-size: 3vw;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5rem;
+}
+
+.imgContainers {
+  width: 70%;
+  height: 45vh;
+  /* background-color: violet */
+  display: flex;
+  gap: 1vw;
+  margin-left: 15%;
+  margin-bottom: 10vh;
+}
+.imgContainers .box1 {
+  width: 33.33%;
+  height: 100%;
+  cursor: pointer;
+}
+.imgContainers img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 7%;
+}
+
+.content1 {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #d32f2f 20%, #e57373 50%, #d32f2f 80%);
+  padding: 2vw;
+  color: white;
+  font-size: 1.5vw;
+  border-radius: 10%;
+}
+
+.lifeAtZomato {
+  width: 70%;
+  margin-left: 14vw;
+  height: 80vh;
+  margin-top: 5rem;
+  /* margin-bottom: 5rem; */
+}
+.container1 {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  gap: 1vw;
+  margin-bottom: 1vh;
+}
+.container1 .leftc1 {
+  width: 65%;
+  height: 100%;
+}
+
+.container1 .rightc1 {
+  width: 35%;
+  height: 100%;
+}
+.rc1 {
+  width: 100%;
+  height: 50%;
+}
+.rc2 {
+  margin-top: 1vh;
+  width: 100%;
+  height: 50%;
+}
+.lifeAtZomato img {
+  width: 100%;
+  height: 100%;
+  border-radius: 2%;
+  object-fit: cover;
+  overflow: hidden;
+  object-position: center;
+}
+.lifeAtZomato h1 {
+  font-size: 3vw;
+  /* font-weight: 00; */
+  font-weight: 600;
+  margin-bottom: 5vh;
+  margin-left: 15vw;
+}
+.gapfor {
+  width: 100%;
+  height: 30vh;
+}
+.everyDay {
+  width: 100%;
+  height: 60vw;
+
+  position: relative;
+}
+.extraorinary {
+  width: 48%;
+  height: 80vh;
+  color: white;
+  padding: 29vw 0vw 0 10vw;
+  position: absolute;
+}
+.extraorinary h1 {
+  font-size: 3vw;
+  font-weight: 600;
+  line-height: 5vw;
+}
+.extraorinary p {
+  font-size: 1.2vw;
+  padding-top: 3vw;
+}
+
+.everyDay img {
+  position: absolute;
+  z-index: -33;
+}

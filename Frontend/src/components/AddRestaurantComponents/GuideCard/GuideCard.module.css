@@ -1,0 +1,142 @@
+.cardBg {
+  min-height: 200px;
+  /* ✅ allow height to grow */
+  position: relative;
+  display: flex;
+  background-image: url("/images/pattern.png");
+  margin: -28px;
+}
+
+.guideCard {
+  width: 70%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem;
+  border-radius: 14px;
+  background-color: white;
+  position: relative;
+  /* ✅ no absolute overlap */
+  top: 15px;
+  column-gap: 15px;
+  transition: 0.5s;
+  box-shadow: 0px 12px 16px 2px #00000047;
+}
+
+.textContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+
+.heading {
+  font-size: 22px;
+  line-height: 1.4;
+  /* ✅ better readability */
+  font-weight: 600;
+}
+
+.subHeading {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: #8f768b;
+  margin-top: 4px;
+}
+
+.requirement {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  /* ✅ responsive */
+  gap: 12px;
+  font-size: 14px;
+  word-wrap: break-word;
+  /* ✅ prevent overflow */
+  overflow-wrap: anywhere;
+  /* ✅ allow wrapping */
+}
+
+.requirement span {
+  color: #91a5a6;
+}
+
+.applyLink {
+  margin-left: 8px;
+  color: #256fef;
+  text-decoration: none;
+}
+
+.pointToConsider {
+  display: flex;
+  /* ✅ icon + text inline */
+  align-items: flex-start;
+  gap: 8px;
+  line-height: 1.4;
+}
+
+.point {
+  flex: 1;
+  /* ✅ take full space */
+  word-break: break-word;
+  /* ✅ wrap long text */
+}
+
+.checkIcon {
+  color: green;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.videoContainer {
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.videoContainer video {
+  max-width: 300px;
+  /* ✅ responsive video */
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+}
+
+@media (max-width: 1250px) {
+  .guideCard {
+    width: 80%;
+  }
+}
+
+@media (max-width: 950px) {
+  .guideCard {
+    padding: 1rem;
+    width: 90%;
+  }
+
+  .requirement {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 750px) {
+  .guideCard {
+    flex-direction: column-reverse;
+    /* ✅ stack video below text */
+    row-gap: 12px;
+  }
+
+  .heading,
+  .subHeading {
+    text-align: center;
+  }
+
+  .videoContainer video {
+    width: 80%;
+  }
+
+  .requirement {
+    grid-template-columns: 1fr;
+    /* ✅ single column on mobile */
+  }
+}

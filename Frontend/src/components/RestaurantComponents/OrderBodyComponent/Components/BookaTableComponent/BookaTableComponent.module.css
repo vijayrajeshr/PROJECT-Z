@@ -1,0 +1,391 @@
+:root {
+  /* ——— Your color palette ——— */
+  --primary: #02757A;        /* Buttons */
+  --primary-soft: #b6d1d2;   /* soft tint (kept) */
+  --success: #048520;        /* Ratings */
+  --success-dark: #036419;   /* darker success for borders */
+  --light: white;          /* card / surface */
+  --light-2: #f2f8f9;        /* subtle surface */
+  --bg-page: white;        /* page background */
+  --border: #D9D9D9;         /* borders/dividers */
+  --text-primary: #222222;   /* headings */
+  --text-secondary: #333333; /* body text */
+  --text-tertiary: #666666;  /* small/secondary text */
+
+  --btn-enabled-bg: #02757A;
+  --btn-hover-bg: #025a5e;   /* slightly darker */
+  --btn-active-bg: #014f52;  /* active */
+  --btn-text-color: #ffffff;
+}
+
+
+
+
+.container {
+  padding: 2rem;
+  max-width: 1100px;
+  margin: auto;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: -30px;
+    background-color: var(--bg-page);
+}
+
+.heading {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: var(--text-primary);
+}
+
+.detailsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.dropdownButton {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid var(--border);
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  background-color: var(--light);
+  cursor: pointer;
+  width: 100%;
+  color: var(--text-secondary);
+}
+
+.dropdownButton:hover {
+  border-color: var(--primary);
+}
+
+.dropdownOptions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: var(--light);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+  max-height: 150px;
+  overflow-y: auto;
+  margin-top: 0.5rem;
+}
+
+.dropdownOption {
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.dropdownOption:hover {
+  background-color: var(--light-2);
+}
+
+.subheading {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: var(--text-primary);
+}
+
+.slotButton {
+  border: 1px solid var(--border);
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 1rem;
+  cursor: pointer;
+  background-color: var(--light);
+  color: var(--text-secondary);
+  transition: background-color 0.2s, color 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.selectedSlot {
+  border: 2px solid var(--primary);
+  background-color: var(--bg-page);
+  color: var(--text-primary);
+}
+
+
+
+
+
+
+.offersText {
+  font-size: 0.85rem;
+  color: var(--text-tertiary);
+  margin-top: 0.5rem;
+}
+
+
+.proceedButton {
+  margin-top: 2rem;
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.25rem;
+  border-radius: 8px;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+
+.proceedDisabled {
+  background-color: var(--border);
+  color: var(--text-tertiary);
+  border: none;
+  cursor: not-allowed;
+}
+
+
+.offerCardContent {
+  background: var(--light);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  border: 1px solid var(--border);
+  transition: transform 0.3s ease-in-out;
+}
+
+.offerCardContent h3 {
+  font-size: 1.25rem;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+/* Single offer item */
+.offerCardSingle {
+  background-color: var(--light-2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.4rem;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  min-width: 150px;
+  flex: 1 1 calc(33.333% - 1rem);
+}
+
+.offerCardSingle:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+.selectedOffer {
+  background: var(--success);
+  color: #fff;
+  font-weight: bold;
+  border: 1px solid var(--success-dark);
+}
+
+.offersText {
+  font-size: 0.85rem; /* Slightly larger text */
+  color: black;
+  margin-top: 0.5rem; /* Add more spacing */
+}
+
+.proceedButton {
+  margin-top: 2rem; /* Increase spacing above button */
+  width: 100%;
+  padding: 1rem; /* Increase padding */
+  font-size: 1.25rem; /* Larger font size */
+  border-radius: 8px; /* Larger border radius */
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.proceedEnabled {
+  background-color: var(--btn-enabled-bg);
+  color: var(--btn-text-color);
+  border: none;
+  cursor: pointer;
+}
+
+
+.proceedEnabled:hover {
+  background-color: var(--btn-hover-bg);
+}
+
+.proceedEnabled:active {
+  background-color: var(--btn-active-bg);
+}
+
+
+.proceedDisabled {
+  background-color: #ddd; /* Gray background for disabled state */
+  color: #999;
+  border: none;
+  cursor: not-allowed;
+}
+
+.offerCard {
+  margin-top: 2rem; /* Add spacing above offer card */
+}
+
+.offerCardContent {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px; /* Consistent padding */
+  text-align: center;
+  border: 1px solid #ddd;
+  transition: transform 0.3s ease-in-out;
+}
+
+.offerCardContent h3 {
+  font-size: 1.25rem; /* Increase font size */
+  color: #333;
+  margin-bottom: 1rem; /* Add more spacing below heading */
+  font-weight: bold;
+}
+
+.offerCardsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem; /* Space between cards */
+  justify-content: center;
+  margin-top: 1rem; /* Add spacing above cards */
+}
+
+.offerCardSingle {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 0.4rem; /* Consistent padding */
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  min-width: 150px; /* Minimum width for cards */
+  flex: 1 1 calc(33.333% - 1rem); /* Flexible width for cards */
+}
+
+.offerCardSingle:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.icon {
+  margin-right: 10px; /* Add space between the icon and the text */
+  font-size: 18px; /* Adjust the icon size if needed */
+  display: inline-block; /* Ensures the icon aligns with the text */
+  vertical-align: middle; /* Vertically aligns the icon with the text */
+}
+
+.selectedOffer {
+  background: rgb(80, 179, 80);
+  color: white;
+  font-weight: bold;
+  border: 1px solid rgb(22, 125, 22);
+}
+.noSlotsMessage{
+  text-align: center;
+}
+
+
+/* ──────────── Responsive Enhancements ──────────── */
+@media (max-width: 1024px) {
+  .detailsGrid,
+  .slotsGrid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
+  }
+
+  .offerCardSingle {
+    flex: 1 1 calc(50% - 1rem); /* 2 cards per row */
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem; /* Reduce padding on small devices */
+  }
+
+  .detailsGrid,
+  .slotsGrid {
+    grid-template-columns: 1fr; /* 1 column on small screens */
+  }
+
+  .dropdownButton {
+    font-size: 0.95rem;
+    padding: 0.6rem 0.8rem;
+  }
+
+  .subheading,
+  .heading {
+    font-size: 1.2rem;
+  }
+
+  .slotButton {
+    padding: 0.75rem;
+    font-size: 0.95rem;
+  }
+
+  .proceedButton {
+    font-size: 1rem;
+    padding: 0.8rem;
+  }
+
+  .offerCardContent h3 {
+    font-size: 1.1rem;
+  }
+
+  .offerCardsContainer {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .offerCardSingle {
+    min-width: 100%;
+    flex: 1 1 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .dropdownButton {
+    font-size: 0.9rem;
+  }
+
+  .slotButton {
+    font-size: 0.9rem;
+  }
+
+  .proceedButton {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .container {
+    margin-bottom: 1rem; /* Reduce bottom space */
+    padding-bottom: 1rem; /* Reduce padding if any */
+  }
+
+  .detailsGrid {
+    margin-bottom: 1rem; /* Reduce grid bottom space */
+  }
+
+  .offerCard {
+    margin-top: 1rem; /* Reduce spacing above offer section */
+  }
+
+  .proceedButton {
+    margin-bottom: 0; /* Remove any excess bottom margin */
+  }
+
+  body {
+    margin-bottom: 0; /* Ensure body doesn't add extra bottom margin */
+  }
+}
+
